@@ -1,0 +1,2621 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Well Control Pro v1.0</title>
+    <!-- ═══ PWA META ═══ -->
+    <meta name="theme-color" content="#0a0e13">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="WCP">
+    <meta name="application-name" content="Well Control Pro">
+    <meta name="description" content="Kill Sheet — ГНВП — Drilling Engineering Calculator">
+    <link rel="icon" type="image/png" href="data:image/png;base64,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">
+    <link id="pwa-manifest" rel="manifest" href="#">
+    <script>
+    (function(){
+        const manifest = {
+            name: "Well Control Pro",
+            short_name: "WCP",
+            description: "Kill Sheet — ГНВП — Drilling Engineering Calculator",
+            start_url: "./",
+            display: "standalone",
+            background_color: "#0a0e13",
+            theme_color: "#0a0e13",
+            orientation: "portrait-primary",
+            icons: [
+                { src: document.getElementById('pwa-icon')?.href || "", sizes: "192x192", type: "image/png" },
+                { src: document.getElementById('pwa-icon')?.href || "", sizes: "512x512", type: "image/png" }
+            ]
+        };
+        const blob = new Blob([JSON.stringify(manifest)], {type: 'application/json'});
+        document.getElementById('pwa-manifest').href = URL.createObjectURL(blob);
+    })();
+    </script>
+    <link rel="apple-touch-icon" id="pwa-icon" href="data:image/png;base64,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"">
+    <!-- Шрифты: подгружаются из интернета, при отсутствии — системные аналоги -->
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" onerror="console.warn('Fonts offline — using system fallbacks')">
+    <style>
+        :root {
+            --bg: #0a0e13;
+            --surface: #111820;
+            --surface2: #161e28;
+            --border: #1e2d3d;
+            --accent: #00b4d8;
+            --danger: #ff4757;
+            --warn: #ffa502;
+            --safe: #2ed573;
+            --text: #cdd6e0;
+            --text-dim: #8faab8;
+            --text-bright: #e8f4fd;
+            --gl: rgba(0,180,216,0.05);
+        }
+        /* Системные аналоги — работают без интернета */
+        @font-face { font-family:'Share Tech Mono'; src:local('Courier New'),local('Courier'); }
+        @font-face { font-family:'Barlow Condensed'; src:local('Arial Narrow'),local('Arial'); }
+        @font-face { font-family:'Barlow'; src:local('Verdana'),local('Arial'); }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Barlow', sans-serif;
+            background: var(--bg); color: var(--text);
+            min-height: 100vh; overflow-x: hidden;
+        }
+        body::before {
+            content: ''; position: fixed; inset: 0;
+            background-image: linear-gradient(var(--gl) 1px,transparent 1px),linear-gradient(90deg,var(--gl) 1px,transparent 1px);
+            background-size: 40px 40px; pointer-events: none; z-index: 0;
+        }
+        body::after {
+            content: ''; position: fixed; inset: 0;
+            background: repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.025) 2px,rgba(0,0,0,.025) 4px);
+            pointer-events: none; z-index: 999;
+        }
+        .wrap { position: relative; z-index: 1; max-width: 980px; margin: 0 auto; padding: 20px 15px 50px; }
+
+        /* HEADER */
+        header {
+            display:flex; align-items:center; justify-content:space-between;
+            padding:15px 22px; background:var(--surface);
+            border:1px solid var(--border); border-bottom:2px solid var(--accent);
+            border-radius:4px 4px 0 0; margin-bottom:2px;
+        }
+        .logo { display:flex; align-items:center; gap:13px; }
+        .logo svg { width:40px; height:40px; }
+        .logo h1 { font-family:'Barlow Condensed',sans-serif; font-size:1.35rem; font-weight:900; letter-spacing:2px; color:var(--text-bright); text-transform:uppercase; }
+        .logo p  { font-family:'Share Tech Mono',monospace; font-size:.6rem; color:var(--accent); letter-spacing:3px; }
+        .hdr-r   { display:flex; flex-direction:column; align-items:flex-end; gap:6px; }
+        .live {
+            display:flex; align-items:center; gap:5px;
+            font-family:'Share Tech Mono',monospace; font-size:.6rem; color:var(--safe); letter-spacing:1px;
+        }
+        .live::before { content:''; width:6px; height:6px; background:var(--safe); border-radius:50%; box-shadow:0 0 7px var(--safe); animation:blink 2s infinite; will-change:opacity; }
+        @keyframes blink { 0%,100%{opacity:1}50%{opacity:.25} }
+        .badge { font-family:'Share Tech Mono',monospace; font-size:.57rem; color:var(--text-dim); border:1px solid var(--border); padding:2px 7px; border-radius:2px; letter-spacing:2px; }
+        .help-btn { font-family:'Share Tech Mono',monospace; font-size:.47rem; color:var(--accent); background:transparent; border:1px solid rgba(0,180,216,.35); padding:2px 7px; border-radius:2px; letter-spacing:1.5px; cursor:pointer; transition:border-color .2s, opacity .2s; }
+        .help-btn:hover { background:rgba(0,180,216,.1); border-color:var(--accent); }
+
+        /* БЫСТРАЯ ПАНЕЛЬ */
+        .qtabs {
+            display: grid;
+            grid-template-columns: 1fr 180px 1fr;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-top: none;
+            margin-bottom: 13px;
+        }
+        .qt-side {
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+        .qt-side-left  { border-right: 1px solid var(--border); }
+        .qt-side-right { border-left:  1px solid var(--border); }
+        .qt {
+            padding: 7px 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid var(--border);
+            min-width: 0;
+        }
+        .qt:last-child { border-bottom: none; }
+        .qt-side-right .qt { flex-direction: row-reverse; text-align: right; }
+        .qt-val-grp { display: flex; flex-direction: column; min-width: 0; }
+        .qt .qv {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.25rem; font-weight: 700;
+            color: var(--text-bright); line-height: 1;
+        }
+        .qt .qv.qv-y { color: #ffd32a; }
+        .qt .qv.qv-r { color: #ff4757; }
+        .qt .qv.qv-c { color: #00e5ff; }
+        .qt .ql  { font-family: 'Share Tech Mono', monospace; font-size: .44rem;
+                   color: var(--text-dim); letter-spacing: .3px; margin-top: 1px; }
+        .qt .qi  {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: .62rem; font-weight: 700;
+            letter-spacing: 1.5px; flex-shrink: 0;
+            padding: 1px 5px 2px;
+            border-radius: 2px;
+            line-height: 1.3;
+        }
+        /* Цвета меток по типу */
+        .qt .qi-y { color: #ffd32a; }
+        .qt .qi-c { color: #00e5ff; }
+        .qt .qi-r { color: #ff4757; }
+        .qt .qi-w { color: var(--text-bright); }
+        .qt-rho {
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            padding: 10px 6px;
+            background: radial-gradient(ellipse at center, rgba(0,180,216,.07) 0%, transparent 70%);
+        }
+        .qt-rho-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: .42rem; letter-spacing: 2px;
+            color: var(--accent); opacity: .75; margin-bottom: 4px;
+        }
+        .qt-ring-wrap { position: relative; width: 108px; height: 108px; }
+        .qt-ring-svg  { width: 108px; height: 108px; transform: rotate(-90deg); }
+        .qt-ring-bg  { stroke: rgba(0,180,216,.12); }
+        .qt-ring-arc {
+            stroke: #00b4d8; stroke-linecap: round;
+            transition: stroke-dashoffset 1s cubic-bezier(.4,0,.2,1), stroke .3s;
+            will-change: stroke-dashoffset;
+        }
+        .qt-ring-inner {
+            position: absolute; inset: 0;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+        }
+        .qt-rho-val {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 2.1rem; font-weight: 700;
+            color: #00ffcc; line-height: 1; transition: color .3s;
+        }
+        .qt-rho-unit {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: .42rem; color: var(--text-dim); margin-top: 2px;
+        }
+        .qt-rho-icp {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: .43rem; color: var(--text-dim);
+            margin-top: 5px; text-align: center; line-height: 1;
+        }
+
+        /* ───── БЛОК РАСХОДА (без круга, справа) ───── */
+        .sw-q-block {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+            min-width: 90px;
+        }
+        .sw-q-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: .42rem;
+            letter-spacing: 1.5px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+        .sw-q-row {
+            display: flex;
+            align-items: stretch;
+        }
+        .sw-q-input {
+            width: 62px;
+            padding: 6px 8px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-right: none;
+            border-radius: 3px 0 0 3px;
+            color: #2ed573;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: .86rem;
+            font-weight: 700;
+            outline: none;
+            text-shadow: none;
+            transition: border-color .2s;
+            -moz-appearance: textfield;
+        }
+        .sw-q-input:focus {
+            border-color: #2ed573;
+            background: rgba(46,213,115,.04);
+        }
+        .sw-q-input::-webkit-inner-spin-button,
+        .sw-q-input::-webkit-outer-spin-button { -webkit-appearance: none; }
+        .sw-q-unit {
+            padding: 0 8px;
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            border-radius: 0 3px 3px 0;
+            display: flex;
+            align-items: center;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: .54rem;
+            color: var(--text-dim);
+            white-space: nowrap;
+        }
+        .sw-q-hint {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: .38rem;
+            color: var(--text-dim);
+            letter-spacing: .3px;
+            line-height: 1.5;
+            opacity: .7;
+        }
+
+        /* ───── СЕКУНДОМЕР ПРОКАЧКИ ───── */
+        .sw-wrap {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 18px 0 14px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-top: none;
+            margin-bottom: 13px;
+            overflow: hidden;
+        }
+        .sw-wrap::before {
+            content: 'СЕКУНДОМЕР ПРОКАЧКИ';
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: .85rem; font-weight: 700; letter-spacing: 4px;
+            color: #00e5ff; opacity: 1;
+            text-shadow: 0 0 12px rgba(0,229,255,.6);
+            position: absolute; top: 7px; left: 50%; transform: translateX(-50%);
+            white-space: nowrap;
+        }
+        .sw-body {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        /* Левая легенда */
+        .sw-legend {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-width: 110px;
+        }
+        .sw-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+        .sw-legend-dot {
+            width: 9px; height: 9px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .sw-legend-dot.down { background: #00e5ff; box-shadow: 0 0 6px #00e5ff88; }
+        .sw-legend-dot.up   { background: #ffd32a; box-shadow: 0 0 6px #ffd32a88; }
+        .sw-legend-text {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: .42rem; color: var(--text-dim); letter-spacing: .5px;
+            line-height: 1.4;
+        }
+        .sw-legend-val {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: .9rem; font-weight: 700; color: var(--text-bright);
+            line-height: 1;
+        }
+        .sw-legend-vol {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: .38rem; color: var(--text-dim); margin-top: 1px;
+        }
+        /* SVG кольца */
+        .sw-ring-wrap {
+            position: relative;
+            width: 190px; height: 190px;
+            flex-shrink: 0;
+        }
+        .sw-svg {
+            width: 190px; height: 190px;
+            transform: rotate(-90deg);
+        }
+        /* Кольца */
+        .sw-bg-out  { stroke: rgba(0,229,255,.08); }
+        .sw-bg-in   { stroke: rgba(255,211,42,.08); }
+        .sw-arc-out {
+            stroke: #00e5ff; stroke-linecap: round;
+            transition: stroke-dashoffset .5s linear;
+            will-change: stroke-dashoffset;
+            filter: drop-shadow(0 0 4px #00e5ff88);
+        }
+        .sw-arc-in {
+            stroke: #ffd32a; stroke-linecap: round;
+            transition: stroke-dashoffset .5s linear;
+            will-change: stroke-dashoffset;
+            filter: drop-shadow(0 0 4px #ffd32a88);
+        }
+        /* Новые элементы единого кольца — transition через inline style */
+        #sw_ring_pumped_pipe, #sw_ring_pumped_ann {
+            will-change: stroke-dasharray, stroke-dashoffset;
+        }
+        /* Внутренний дисплей */
+        .sw-inner {
+            position: absolute; inset: 0;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            gap: 2px;
+        }
+        .sw-phase-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: .38rem; letter-spacing: 2px;
+            color: var(--text-dim); text-transform: uppercase;
+            transition: color .3s;
+        }
+        .sw-time {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 2.4rem; font-weight: 700;
+            color: var(--text-bright); line-height: 1;
+            letter-spacing: 1px;
+            transition: color .3s;
+        }
+        .sw-time.phase-down { color: #00e5ff; text-shadow: 0 0 14px #00e5ff66; }
+        .sw-time.phase-up   { color: #ffd32a; text-shadow: 0 0 14px #ffd32a66; }
+        .sw-time.phase-done { color: #00ff88; text-shadow: 0 0 14px #00ff8866; }
+        .sw-subtime {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: .44rem; color: var(--text-dim);
+            letter-spacing: .5px; margin-top: 2px;
+        }
+        .sw-progress-pct {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: .85rem; font-weight: 600;
+            color: var(--text-dim); margin-top: 3px;
+        }
+        /* Центральная полоска-маркер разделения фаз */
+        .sw-divider {
+            position: absolute; top: 50%; left: 50%;
+            width: 38px; height: 1px;
+            transform: translate(-50%, -50%);
+            background: var(--border);
+        }
+        /* Правая панель — кнопки управления + расход */
+        .sw-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-width: 100px;
+        }
+        .sw-controls-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 2px 0;
+        }
+        .sw-btn {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: .62rem; letter-spacing: 1.5px;
+            padding: 6px 10px; border-radius: 3px;
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,.03);
+            color: var(--text-dim); cursor: pointer;
+            transition: all .2s; text-align: center;
+        }
+        .sw-btn:hover { border-color: var(--accent); color: var(--accent); background: rgba(0,180,216,.08); }
+        .sw-btn.active { border-color: #00e5ff; color: #00e5ff; background: rgba(0,229,255,.12); }
+        .sw-btn.stop   { border-color: #ff4757; color: #ff4757; background: rgba(255,71,87,.08); }
+        .sw-btn.stop:hover { background: rgba(255,71,87,.18); }
+        .sw-btn.reset  { font-size: .55rem; opacity: .65; }
+        .sw-btn.reset:hover { opacity: 1; border-color: var(--text-dim); color: var(--text-dim); }
+        /* Нижняя шкала прогресса */
+        .sw-bottom {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 14px;
+            width: calc(100% - 40px);
+            max-width: 500px;
+        }
+        .sw-bar-wrap {
+            flex: 1;
+            height: 5px;
+            background: rgba(255,255,255,.06);
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+        }
+        .sw-bar-down {
+            position: absolute; top: 0; left: 0;
+            height: 100%; background: #00e5ff;
+            border-radius: 3px;
+            transition: width .5s linear;
+            box-shadow: 0 0 8px #00e5ff66;
+        }
+        .sw-bar-up {
+            position: absolute; top: 0;
+            height: 100%; background: #ffd32a;
+            border-radius: 3px;
+            transition: width .5s linear, left .5s linear;
+            box-shadow: 0 0 8px #ffd32a66;
+        }
+        .sw-bar-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: .38rem; color: var(--text-dim);
+            white-space: nowrap;
+        }
+        /* ── Панель объёмов над секундомером ── */
+        .sw-vol-panel {
+            display: flex;
+            flex-direction: column;
+            width: calc(100% - 40px);
+            max-width: 520px;
+            background: rgba(0,0,0,.18);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            margin-bottom: 16px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+        .sw-vol-hdr {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            padding: 6px 12px 5px;
+            border-bottom: 1px solid var(--border);
+            background: rgba(255,255,255,.03);
+        }
+        .sw-vol-hdr-name {}
+        .sw-vol-hdr-col {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: .52rem; letter-spacing: 2px;
+            color: var(--accent); opacity: .8;
+            text-align: right;
+            text-transform: uppercase;
+        }
+        .sw-vol-row2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
+            padding: 6px 12px;
+            border-bottom: 1px solid rgba(30,45,61,.4);
+        }
+        .sw-vol-row2:last-child { border-bottom: none; }
+        .sw-vol-row2-total {
+            border-top: 1px solid var(--border);
+            background: rgba(255,255,255,.02);
+        }
+        .sw-vol-row2-name {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: .56rem; color: var(--text-dim);
+        }
+        .sw-vol-dot {
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .sw-vol-val {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: .9rem; font-weight: 700;
+            color: var(--text-bright);
+            letter-spacing: .5px;
+            text-align: right;
+        }
+        .sw-vol-live {
+            transition: color .3s;
+        }
+
+        @media (max-width: 600px) {
+            .sw-vol-panel { width: calc(100% - 20px); }
+            .sw-vol-val { font-size: .75rem; }
+        }
+
+
+        @keyframes sw-pulse { 0%,100%{ opacity:1 } 50%{ opacity:.6 } }
+        .sw-arc-out.running { animation: sw-pulse 1.5s ease-in-out infinite; }
+        .sw-arc-in.running  { animation: sw-pulse 1.8s ease-in-out infinite; }
+
+        @media (max-width:600px) {
+            .sw-body { flex-direction: column; gap: 14px; }
+            .sw-ring-wrap { width: 160px; height: 160px; }
+            .sw-svg { width: 160px; height: 160px; }
+            .sw-time { font-size: 1.9rem; }
+            .sw-controls { flex-direction: row; flex-wrap: wrap; justify-content: center; min-width: unset; }
+            .sw-bottom { width: calc(100% - 20px); }
+        }
+
+        @media (max-width:600px) {
+            .qtabs { grid-template-columns: 1fr; }
+            .qt-rho { border-bottom: 1px solid var(--border); }
+            .qt-side { grid-template-rows: auto; }
+            .qt-side-left, .qt-side-right { border: none; border-bottom: 1px solid var(--border); }
+        }
+
+        /* LAYOUT */
+        .mg { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+        .fw { grid-column:span 2; }
+
+        /* PANEL */
+        .panel { background:var(--surface); border:1px solid var(--border); border-radius:4px; overflow:hidden; contain: content; }
+        .ph { display:flex; align-items:center; gap:8px; padding:9px 14px; background:var(--surface2); border-bottom:1px solid var(--border); }
+        .pn { font-family:'Barlow Condensed',sans-serif; font-size:.68rem; font-weight:700; color:var(--accent); letter-spacing:2px; opacity:.55; }
+        .pt { font-family:'Barlow Condensed',sans-serif; font-size:.72rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--text-bright); white-space:normal; line-height:1.3; }
+        .pb { padding:12px 14px; }
+
+        /* INPUTS */
+        .ig { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+        .igrp { display:flex; flex-direction:column; gap:3px; min-width:0; }
+        .igrp.scr-pair { display:grid; grid-template-columns:1fr 1fr; gap:8px;
+                          grid-column: span 2; align-items: end; }
+        .igrp-inner { display:flex; flex-direction:column; gap:3px; min-width:0; justify-content: flex-end; }
+        .igrp.fw{grid-column:span 2}
+        label { font-family:'Share Tech Mono',monospace; font-size:.55rem; color:var(--text-dim); letter-spacing:1px; text-transform:uppercase; white-space:normal; line-height:1.35; word-break:break-word; overflow-wrap:anywhere; hyphens:auto; min-height:1.5em; }
+        .iu { display:flex; align-items:stretch; }
+        input[type=number] {
+            flex:1; min-width:0; padding:7px 8px;
+            background:var(--bg); border:1px solid var(--border); border-radius:3px 0 0 3px;
+            color:var(--text-bright); font-family:'Share Tech Mono',monospace; font-size:.86rem;
+            outline:none; transition:border-color .2s; -moz-appearance:textfield;
+        }
+        input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
+        input[type=number]:focus{border-color:var(--accent);background:rgba(0,180,216,.04)}
+        .ul { padding:0 7px; background:var(--surface2); border:1px solid var(--border); border-left:none; border-radius:0 3px 3px 0; display:flex; align-items:center; font-family:'Share Tech Mono',monospace; font-size:.54rem; color:var(--text-dim); white-space:nowrap; }
+        .sdiv { grid-column:span 2; display:flex; align-items:center; gap:7px; margin:5px 0 1px; }
+        .sdiv span { font-family:'Share Tech Mono',monospace; font-size:.54rem; color:var(--accent); letter-spacing:2px; opacity:.7; white-space:normal; text-align:center; word-break:break-word; overflow-wrap:anywhere; hyphens:auto; line-height:1.35; }
+        .sdiv::before,.sdiv::after{content:'';flex:1;height:1px;background:var(--border)}
+
+        /* RESULT CARDS */
+        .rh { display:flex; align-items:center; justify-content:space-between; padding:9px 14px; background:rgba(0,180,216,.07); border-bottom:1px solid rgba(0,180,216,.18); }
+        .rh .pt{color:var(--accent)}
+        .kg  { display:grid; grid-template-columns:1fr 1fr; gap:7px; }
+        .kg3 { display:grid; grid-template-columns:repeat(3,1fr); gap:7px; margin-top:7px; }
+        .kc  { background:var(--surface2); border:1px solid var(--border); border-radius:4px; padding:10px 12px; position:relative; overflow:hidden; }
+        .kc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent)}
+        .kc.kd::before{background:var(--danger)}
+        .kc.kw::before{background:var(--warn)}
+        .kc.ks::before{background:var(--safe)}
+        .kc.fw{grid-column:span 2}
+        .klbl{font-family:'Share Tech Mono',monospace;font-size:.54rem;color:var(--text-dim);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px}
+        .kval{font-family:'Barlow Condensed',sans-serif;font-size:1.85rem;font-weight:700;color:var(--accent);line-height:1}
+        .kc.kd .kval{color:var(--danger)}
+        .kc.kw .kval{color:var(--warn)}
+        .kc.ks .kval{color:var(--safe)}
+        .ksub{font-family:'Share Tech Mono',monospace;font-size:.57rem;color:var(--text-dim);margin-top:2px}
+
+        /* FORMULA MODAL */
+        .kc { cursor:default; }
+        .kinfo{position:absolute;top:7px;right:8px;font-size:.7rem;color:var(--accent);opacity:.4;cursor:pointer;line-height:1;transition:opacity .15s;user-select:none}
+        .kinfo:hover{opacity:1}
+        .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1000;align-items:center;justify-content:center}
+        .modal-overlay.open{display:flex}
+        .modal{background:var(--surface);border:1px solid var(--accent);border-radius:6px;padding:22px 24px;max-width:420px;width:90%;position:relative;box-shadow:0 0 40px rgba(0,180,216,.15)}
+        .help-section{margin-bottom:16px}
+        .help-section-title{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:2px;color:var(--accent);text-transform:uppercase;border-bottom:1px solid var(--border);padding-bottom:4px;margin-bottom:8px}
+        .help-row{display:grid;grid-template-columns:120px 1fr;gap:6px 10px;margin-bottom:5px;align-items:start}
+        .help-term{font-family:'Share Tech Mono',monospace;font-size:.62rem;color:var(--warn);letter-spacing:1px;font-weight:700;padding-top:1px}
+        .help-def{font-family:'Share Tech Mono',monospace;font-size:.6rem;color:var(--text);line-height:1.6}
+        .help-def em{color:var(--text-dim);font-style:normal}
+        .modal-close{position:absolute;top:10px;right:13px;font-size:1.1rem;color:var(--text-dim);cursor:pointer;line-height:1;transition:color .15s}
+        .modal-close:hover{color:var(--danger)}
+        .modal-title{font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;padding-right:20px}
+        .modal-body{font-family:'Share Tech Mono',monospace;font-size:.65rem;color:var(--text);line-height:1.8;white-space:pre-wrap}
+
+        /* ALERT */
+        .abar{display:none;align-items:center;gap:8px;padding:8px 12px;margin-top:8px;background:rgba(255,71,87,.07);border:1px solid rgba(255,71,87,.3);border-radius:3px}
+        .abar .ai{color:var(--danger);font-size:.9rem}
+        .abar .at{font-family:'Share Tech Mono',monospace;font-size:.6rem;color:var(--danger);letter-spacing:1px}
+
+        /* VOLUME TABLE */
+        .vtbl{width:100%;border-collapse:collapse;margin-top:3px}
+        .vtbl th{font-family:'Share Tech Mono',monospace;font-size:.52rem;color:var(--text-dim);letter-spacing:1px;text-align:left;padding:4px 7px;border-bottom:1px solid var(--border)}
+        .vtbl td{font-family:'Share Tech Mono',monospace;font-size:.67rem;padding:5px 7px;border-bottom:1px solid rgba(30,45,61,.5);color:var(--text)}
+        .vtbl td:last-child{color:var(--accent);text-align:right}
+        .vtbl tr.tot td{border-bottom:none;font-weight:700;color:var(--text-bright)}
+        .vtbl tr.tot td:last-child{color:var(--safe)}
+        .vtbl tr.sub td{border-bottom:1px solid var(--border);font-weight:600;color:var(--text-bright)}
+        .vtbl tr.sub td:last-child{color:var(--accent)}
+
+        /* CHART */
+        .cwrap{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:14px;margin-top:10px;contain:layout style;}
+        .chdr{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:11px;flex-wrap:wrap;gap:7px}
+        .ctitle{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-bright)}
+        .csub{font-family:'Share Tech Mono',monospace;font-size:.53rem;color:var(--text-dim);margin-top:2px;letter-spacing:1px}
+        .cleg{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+        .cli{display:flex;align-items:center;gap:5px;font-family:'Share Tech Mono',monospace;font-size:.54rem;color:var(--text-dim)}
+        .cll{width:18px;height:2px}
+        .cld{width:18px;height:0;border-top:2px dashed currentColor}
+
+        /* SCHEDULE TABLE */
+        .stbl{width:100%;border-collapse:collapse}
+        .stbl th{font-family:'Share Tech Mono',monospace;font-size:.52rem;color:var(--text-dim);letter-spacing:1px;text-align:right;padding:4px 8px;border-bottom:1px solid var(--border)}
+        .stbl th:first-child{text-align:left}
+        .stbl td{font-family:'Share Tech Mono',monospace;font-size:.65rem;padding:5px 8px;border-bottom:1px solid rgba(30,45,61,.4);text-align:right;color:var(--text)}
+        .stbl td:first-child{text-align:left;color:var(--accent)}
+        .stbl tr.ms td{background:rgba(0,180,216,.05)}
+        .stbl tr.ms td:first-child{color:var(--safe)}
+
+
+        /* ═══ МОБИЛЬНАЯ АДАПТАЦИЯ ANDROID ═══ */
+
+        /* Safe area для телефонов с вырезом/закруглёнными углами */
+        body { padding-bottom: env(safe-area-inset-bottom); }
+        .wrap { padding-bottom: calc(70px + env(safe-area-inset-bottom)); }
+
+        /* Числовые инпуты — крупнее для тапа */
+        @media (max-width: 768px) {
+            input[type=number] {
+                font-size: 1.1rem;
+                padding: 11px 10px;
+                min-height: 44px; /* минимальная зона тапа */
+            }
+            .ul { min-height: 44px; padding: 0 10px; font-size: .6rem; }
+            label { font-size: .6rem; }
+
+            /* Шапка компактнее */
+            header { padding: 10px 14px; }
+            .logo svg { width: 32px; height: 32px; }
+            .logo h1 { font-size: 1rem; letter-spacing: 1px; }
+            .logo p { font-size: .5rem; }
+            .live { font-size: .52rem; }
+            .badge { font-size: .5rem; padding: 2px 6px; }
+
+            /* Quick tabs — 3 колонки на телефоне */
+            .qtabs { grid-template-columns: repeat(3,1fr); }
+            .qt { padding: 9px 5px; }
+            .qt .qv { font-size: 1rem; }
+
+            /* Панели — одна колонка */
+            .mg { grid-template-columns: 1fr; gap: 8px; }
+            .fw { grid-column: span 1; }
+
+            /* KPI карточки */
+            .kg  { grid-template-columns: 1fr 1fr; gap: 6px; }
+            .kg3 { grid-template-columns: 1fr 1fr; gap: 6px; }
+            .kc.fw { grid-column: span 2; }
+            .kval { font-size: 1.6rem; }
+            .klbl { font-size: .5rem; }
+
+            /* Таблицы — горизонтальный скролл */
+            .vtbl, .stbl { font-size: .6rem; }
+            .vtbl th, .stbl th { font-size: .55rem; padding: 5px 6px; }
+            .vtbl td, .stbl td { padding: 5px 6px; }
+
+            /* График — полная ширина */
+            .cwrap { padding: 10px 8px; }
+            #killChart { touch-action: pan-y; contain: strict; will-change: contents; }
+
+            /* Модальное окно */
+            .modal { padding: 18px; max-width: 95vw; }
+            .modal-body { font-size: .62rem; }
+
+            /* Панели */
+            .ph { padding: 8px 12px; }
+            .pb { padding: 10px 12px; }
+            .ig { gap: 7px; }
+        }
+
+        /* Очень маленькие экраны (360px) */
+        @media (max-width: 400px) {
+            .qtabs { grid-template-columns: repeat(3,1fr); }
+            .qt .qv { font-size: .9rem; }
+            .kval { font-size: 1.4rem; }
+            header { padding: 8px 10px; }
+        }
+
+        /* Ландшафтная ориентация на телефоне */
+        @media (max-width: 900px) and (orientation: landscape) {
+            .mg { grid-template-columns: 1fr 1fr; }
+            .fw { grid-column: span 2; }
+            .qtabs { grid-template-columns: repeat(6,1fr); }
+            .wrap { padding-top: 12px; }
+        }
+
+        /* Кнопка установки PWA */
+        #pwa-install-bar {
+            display: none;
+            position: fixed; bottom: 0; left: 0; right: 0;
+            background: var(--surface);
+            border-top: 2px solid var(--accent);
+            padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+            z-index: 9999;
+            align-items: center; justify-content: space-between; gap: 12px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,.4);
+        }
+        #pwa-install-bar .pwa-msg {
+            display: flex; align-items: center; gap: 10px;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: .85rem; color: var(--text-bright); letter-spacing: .5px;
+        }
+        #pwa-install-bar .pwa-msg svg { flex-shrink: 0; }
+        #pwa-install-btn {
+            background: var(--accent); color: #000;
+            border: none; padding: 9px 20px;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: .85rem; font-weight: 700;
+            letter-spacing: 1px; cursor: pointer;
+            white-space: nowrap; border-radius: 2px;
+            transition: opacity .15s;
+        }
+        #pwa-install-btn:hover { opacity: .85; }
+        #pwa-install-dismiss {
+            background: none; border: none; color: var(--text-dim);
+            font-size: 1.1rem; cursor: pointer; padding: 4px 8px; line-height: 1;
+        }
+
+    </style>
+</head>
+<body style="touch-action:pan-y;">
+<div class="wrap">
+
+<!-- HEADER -->
+<header>
+    <div class="logo">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAADy0lEQVR42u2YT2gcdRTHv7+Zyc7uzKZrrLuprU02WxsnummCFJpsFCz1YEFJEaNI8eClQhEEBdGeUgqGHnoRsVDoQcSDiqKwhx4slWKTFLRUTGRtm+xaN3WbJWH/zXRmsjvj4desIWniLzOzDdK8w/J4zL7fZ37vze/93gM25cGUZMorT8RjlBcVl/44VyjJFIDQ0Vfrv3XjRsQomQq17VlNcYxFXMbo7sYsSvHTr6iRKg6CSLxCWQtrPUzEWxT3WIQRhfplRFmJxf4Zkv+kqb+iAxoHWMTDGHmCRe4PCjuWsNrfGoGy1PNyLA9O6sbIJtD/DugeSf2+cfakfsr6CLETXYU7PIDPDt8cjJcAKCNKriQAOD2Uff3pwl+Fpu6TTwAINFlH+ucHu4udYUMU7MIdfnrON3yudSwjA/jmzcyBzgp1btnIlZp+yQaO1a5P8LuZduiisBcAR9AX1ailf1EZ6FCpkujQAIymZQDhYPXC21PHD+Y0k3v+9K6dx7sOnY3+eCPY2lxd6nZe4x/6ML5z+Mmf0vJLT5Uuq68p1jQT0M98XCWB+vKPP2JEgtV8RQDQH1UBPLplob3FrAN9/PKMEjEqBnf487bUbVFf4CZz/pEfIt/9FlrpXDW5UxfCACRbP2J+zQRUBT/O9wBIRNX6ZpwZ22rWyECHBuCZ2N19GstIrc3VF5QygO8nQkWdZ8mSW8Umqjxm5ViTmkatZ4cu+6xEhwrg/LXg1ZmAEtFbpFoiqgHIV4RrebEzbBACAOk5H2Pabg8tUCXLbWMG4vcCEDh7X7uWiGqqyf16yz+alglBX7s2EFPp9gAgi7XHZqORfNZ7+/MANOI/4xtiBRoXeswaATDUW2hrMS//KdUsMpqWAAzGi51hA8BoRgbwx6xo2wAQ22qujfKwVCuMTMwM//5sTE1Obtknf5niYkyfPQAd4pVsoK9dG+ot1pN3LCPXLPJKb5E+Q423y8K5VPPBrvJgvHgsuW2NNJrX+NiJrn9LbGL3+g5Gup7A2QAupSUAZYObzInUUja4ib/99Ml3vt2RmhWDovXFGzeVVsMv2ErE+ODALD26PDgYqVxKy+8+lwegV8mVrFQ37tmuAxjPyNZi1sxWhP2f7HorMXeou3T+6JQo2GWdm5rzXZyWveg6ltxZG1oiVmtLNovrJlADrh/L2ryGX/I3sA1aTsPUBjWMibFXZG2l3WCtq5tu4LCBMUb3YxzjbMzgaGC1zhGRg5mVo6EnwxDNGQ1cTWFXYLlEcQ10Lyw3KB6VjpVrux5VeyQbM55+AOUf6bOkKTMCDcMAAAAASUVORK5CYII=" style="width:40px;height:40px;object-fit:cover;border-radius:50%;flex-shrink:0;" alt="WCP">
+        <div>
+            <h1>Well Control Pro</h1>
+            <p>DRILLING ENGINEERING — KILL SHEET</p>
+        </div>
+    </div>
+    <div class="hdr-r">
+        <button class="help-btn" onclick="openHelp()" title="Справка по сокращениям">? СПРАВКА</button>
+        <div style="display:flex;align-items:center;gap:10px;">
+
+            <div class="badge">v1.0</div>
+        </div>
+    </div>
+</header>
+
+<!-- БЫСТРАЯ ПАНЕЛЬ -->
+<div class="qtabs">
+
+  <div class="qt-side qt-side-left">
+    <div class="qt">
+      <span class="qi qi-y">ICP</span>
+      <div class="qt-val-grp">
+        <span class="qv qv-y" id="qt_icp">—</span>
+        <span class="ql">Нач. давл. циркуляции · атм</span>
+      </div>
+    </div>
+    <div class="qt">
+      <span class="qi qi-c">FCP</span>
+      <div class="qt-val-grp">
+        <span class="qv qv-c" id="qt_fcp">—</span>
+        <span class="ql">Кон. давл. циркуляции · атм</span>
+      </div>
+    </div>
+    <div class="qt">
+      <span class="qi qi-r">M2</span>
+      <div class="qt-val-grp">
+        <span class="qv qv-r" id="qt_maasp2">—</span>
+        <span class="ql">MAASP 2 · лимит при ρ_kill</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="qt-rho">
+    <div class="qt-rho-label">ρ ГЛУШЕНИЯ</div>
+    <div class="qt-ring-wrap">
+      <svg class="qt-ring-svg" viewBox="0 0 100 100">
+        <circle class="qt-ring-bg" cx="50" cy="50" r="42" fill="none" stroke-width="6"/>
+      </svg>
+      <div class="qt-ring-inner">
+        <span class="qt-rho-val" id="qt_rho">—</span>
+        <span class="qt-rho-unit">г/см³</span>
+      </div>
+    </div>
+    <div class="qt-rho-icp">+5% запас</div>
+    <div style="margin-top:6px;text-align:center">
+      <div style="font-family:'Share Tech Mono',monospace;font-size:.38rem;letter-spacing:1.5px;color:var(--text-dim);text-transform:uppercase;margin-bottom:2px">ρ макс (ГРП)</div>
+      <span id="qt_rho_max" style="font-family:'Barlow Condensed',sans-serif;font-size:.95rem;font-weight:700;color:#2ed573">—</span>
+      <span style="font-family:'Share Tech Mono',monospace;font-size:.38rem;color:var(--text-dim);margin-left:2px">г/см³</span>
+    </div>
+  </div>
+
+  <div class="qt-side qt-side-right">
+    <div class="qt">
+      <div class="qt-val-grp">
+        <span class="qv" id="qt_down">—</span>
+        <span class="ql">Время вниз (ч · мин)</span>
+      </div>
+      <span class="qi qi-w">▼</span>
+    </div>
+    <div class="qt">
+      <div class="qt-val-grp">
+        <span class="qv" id="qt_up">—</span>
+        <span class="ql">Время вверх (ч · мин)</span>
+      </div>
+      <span class="qi qi-w">▲</span>
+    </div>
+    <div class="qt">
+      <div class="qt-val-grp">
+        <span class="qv qv-y" id="qt_tcyc">—</span>
+        <span class="ql">Полный цикл (ч · мин)</span>
+      </div>
+      <span class="qi qi-y">⟳</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     СЕКУНДОМЕР ПРОКАЧКИ
+══════════════════════════════════════════════════════════ -->
+<div class="sw-wrap" id="swWrap">
+
+  <!-- ── Панель объёмов: плановый / фактический ── -->
+  <div class="sw-vol-panel">
+    <!-- Заголовки колонок -->
+    <div class="sw-vol-hdr">
+      <div class="sw-vol-hdr-name"></div>
+      <div class="sw-vol-hdr-col">ПЛАН</div>
+      <div class="sw-vol-hdr-col" style="color:#00ff88">ФАКТ</div>
+    </div>
+    <!-- Строка: Трубное -->
+    <div class="sw-vol-row2">
+      <div class="sw-vol-row2-name">
+        <span class="sw-vol-dot" style="background:#00e5ff"></span>
+        <span>Трубное</span>
+      </div>
+      <div class="sw-vol-val" id="svp_plan_pipe">— м³</div>
+      <div class="sw-vol-val sw-vol-live" id="svp_fact_pipe">0.000 м³</div>
+    </div>
+    <!-- Строка: Затрубное -->
+    <div class="sw-vol-row2">
+      <div class="sw-vol-row2-name">
+        <span class="sw-vol-dot" style="background:#ffd32a"></span>
+        <span>Затрубное</span>
+      </div>
+      <div class="sw-vol-val" id="svp_plan_ann">— м³</div>
+      <div class="sw-vol-val sw-vol-live" id="svp_fact_ann">0.000 м³</div>
+    </div>
+    <!-- Строка: Итого -->
+    <div class="sw-vol-row2 sw-vol-row2-total">
+      <div class="sw-vol-row2-name">
+        <span class="sw-vol-dot" style="background:var(--text-dim)"></span>
+        <span>Итого</span>
+      </div>
+      <div class="sw-vol-val" id="svp_plan_total">— м³</div>
+      <div class="sw-vol-val sw-vol-live" id="svp_fact_total" style="color:#00ff88">0.000 м³</div>
+    </div>
+  </div>
+
+  <div class="sw-body">
+
+
+
+    <!-- Кольца -->
+    <div class="sw-ring-wrap">
+      <svg class="sw-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Единое кольцо R=82, circumference≈515 -->
+        <!-- Фон (остаток закачки — dim) -->
+        <circle id="sw_ring_bg_pipe" cx="100" cy="100" r="82" fill="none" stroke-width="13"
+                stroke="rgba(0,229,255,0.13)"/>
+        <circle id="sw_ring_bg_ann"  cx="100" cy="100" r="82" fill="none" stroke-width="13"
+                stroke="rgba(255,211,42,0.13)" stroke-dasharray="515" stroke-dashoffset="515"/>
+        <!-- Закаченный объём — яркие дуги -->
+        <circle id="sw_ring_pumped_pipe" cx="100" cy="100" r="82" fill="none" stroke-width="13"
+                stroke="#00e5ff" stroke-dasharray="515" stroke-dashoffset="515"
+                stroke-linecap="round" style="filter:drop-shadow(0 0 5px #00e5ff88);transition:stroke-dashoffset .5s linear;"/>
+        <circle id="sw_ring_pumped_ann"  cx="100" cy="100" r="82" fill="none" stroke-width="13"
+                stroke="#ffd32a" stroke-dasharray="515" stroke-dashoffset="515"
+                stroke-linecap="round" style="filter:drop-shadow(0 0 5px #ffd32a88);transition:stroke-dashoffset .5s linear;"/>
+
+
+      </svg>
+
+      <div class="sw-inner">
+        <div class="sw-phase-label" id="sw_phase">ОЖИДАНИЕ</div>
+        <div class="sw-time" id="sw_time">00:00</div>
+
+        <div class="sw-progress-pct" id="sw_pct"></div>
+      </div>
+    </div>
+
+    <!-- Управление + расход справа -->
+    <div class="sw-controls">
+      <button class="sw-btn active" id="sw_btn_start" onclick="swStart()">▶ СТАРТ</button>
+      <button class="sw-btn stop"   id="sw_btn_stop"  onclick="swStop()" style="display:none">■ СТОП</button>
+      <button class="sw-btn reset"                    onclick="swReset()">↺ СБРОС</button>
+      <div class="sw-controls-divider"></div>
+      <!-- Расход насоса — без круга -->
+      <div class="sw-q-block">
+        <div class="sw-q-label">ПРОИЗВ. НАСОСА</div>
+        <div class="sw-q-row">
+          <input type="number" id="q_ls" value="12" step="0.1" oninput="calcDebounced()" class="sw-q-input"/>
+          <span class="sw-q-unit">л/с</span>
+        </div>
+        <div class="sw-q-hint">расход при глушении</div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div>
+
+<!-- 01 КОНСТРУКЦИЯ СКВАЖИНЫ -->
+<div class="panel">
+    <div class="ph"><span class="pn">01</span><span class="pt">Конструкция Скважины</span></div>
+    <div class="pb"><div class="ig">
+        <div class="sdiv"><span>ЗАБОЙ</span></div>
+        <div class="igrp"><label>MD — По стволу</label><div class="iu"><input type="number" id="md" value="3200" oninput="calcDebounced()"><span class="ul">м</span></div></div>
+        <div class="igrp"><label>TVD — По вертикали</label><div class="iu"><input type="number" id="tvd" value="2900" oninput="calcDebounced()"><span class="ul">м</span></div></div>
+        <div class="sdiv"><span>ОКНО (БАШМАК ОК)</span></div>
+        <div class="igrp"><label>MD — По стволу</label><div class="iu"><input type="number" id="window" value="2400" oninput="calcDebounced()"><span class="ul">м</span></div></div>
+        <div class="igrp"><label>TVD — По вертикали</label><div class="iu"><input type="number" id="tvd_shoe" value="2100" oninput="calcDebounced()"><span class="ul">м</span></div></div>
+        <div class="sdiv"><span>ОБСАДНАЯ КОЛОННА / ОТКРЫТЫЙ СТВОЛ</span></div>
+        <div class="igrp"><label>Ø Обсадной нар</label><div class="iu"><input type="number" id="cas_e" value="168.3" step="0.1" oninput="calcDebounced()"><span class="ul">мм</span></div></div>
+        <div class="igrp"><label>Стенка обсадной</label><div class="iu"><input type="number" id="cas_t" value="8.94" step="0.01" oninput="calcDebounced()"><span class="ul">мм</span></div></div>
+        <div class="igrp fw"><label>Ø Открытого ствола</label><div class="iu"><input type="number" id="oh_d" value="155.6" step="0.1" oninput="calcDebounced()"><span class="ul">мм</span></div></div>
+    </div></div>
+</div>
+
+<!-- 02 БУРИЛЬНАЯ КОЛОННА -->
+<div class="panel">
+    <div class="ph"><span class="pn">02</span><span class="pt">Бурильная Колонна</span></div>
+    <div class="pb"><div class="ig">
+        <div class="sdiv"><span>СБТ — Стальные Бурильные Трубы</span></div>
+        <div class="igrp"><label>Ø СБТ нар</label><div class="iu"><input type="number" id="dp_e" value="127" oninput="calcDebounced()"><span class="ul">мм</span></div></div>
+        <div class="igrp"><label>Стенка СБТ</label><div class="iu"><input type="number" id="dp_t" value="9.19" step="0.01" oninput="calcDebounced()"><span class="ul">мм</span></div></div>
+        <div class="sdiv"><span>ТБТ — Утяжелённые Бурильные Трубы (в обсадной колонне)</span></div>
+        <div class="igrp"><label>Ø ТБТ нар</label><div class="iu"><input type="number" id="hwt_e" value="127" step="0.1" oninput="calcDebounced()"><span class="ul">мм</span></div></div>
+        <div class="igrp"><label>Стенка ТБТ</label><div class="iu"><input type="number" id="hwt_t" value="38" step="0.1" oninput="calcDebounced()"><span class="ul">мм</span></div></div>
+        <div class="igrp fw"><label>Длина ТБТ</label><div class="iu"><input type="number" id="hwt_l" value="0" oninput="calcDebounced()"><span class="ul">м</span></div></div>
+        <div class="sdiv"><span>КНБК — Компоновка Низа Бурильной Колонны (в открытом стволе, снизу)</span></div>
+        <div class="igrp"><label>Ø КНБК средний нар</label><div class="iu"><input type="number" id="bha_e" value="155" step="0.1" oninput="calcDebounced()"><span class="ul">мм</span></div></div>
+        <div class="igrp"><label>Стенка КНБК средняя</label><div class="iu"><input type="number" id="bha_t" value="25" step="0.1" oninput="calcDebounced()"><span class="ul">мм</span></div></div>
+        <div class="igrp fw"><label>Длина КНБК</label><div class="iu"><input type="number" id="bha_l" value="0" oninput="calcDebounced()"><span class="ul">м</span></div></div>
+    </div></div>
+</div>
+
+<!-- 03 ПЛОТНОСТЬ РАСТВОРА -->
+<div class="panel fw">
+    <div class="ph"><span class="pn">03</span><span class="pt">Плотность, Опрессовка ОК, Градиент</span></div>
+    <div class="pb"><div class="ig">
+        <div class="sdiv"><span>ТЕКУЩАЯ ПЛОТНОСТЬ РАСТВОРА</span></div>
+        <div class="igrp fw"><label>ρ раствора — текущая плотность бурового раствора</label><div class="iu"><input type="number" id="rho" value="1.25" step="0.01" oninput="calcDebounced()"><span class="ul">г/см³</span></div></div>
+
+        <div class="sdiv"><span>ОПРЕССОВКА ОБСАДНОЙ КОЛОННЫ</span></div>
+        <div class="igrp scr-pair">
+            <div class="igrp-inner"><label>P_опр — давление опрессовки обсадной колонны на устье</label><div class="iu"><input type="number" id="p_opr" value="" step="1" oninput="calcDebounced()"><span class="ul">атм</span></div></div>
+            <div class="igrp-inner"><label>ρ_опр — плотность раствора во время опрессовки</label><div class="iu"><input type="number" id="rho_opr" value="" step="0.01" oninput="calcDebounced()"><span class="ul">г/см³</span></div></div>
+        </div>
+
+        <div class="sdiv"><span>ГРАДИЕНТ ГИДРОРАЗРЫВА</span></div>
+        <div class="igrp fw"><label>G_ГРП — градиент гидроразрыва у башмака обсадной колонны</label><div class="iu"><input type="number" id="g_frp" value="" step="0.001" placeholder="напр. 0.182" oninput="calcDebounced()"><span class="ul">атм/м</span></div></div>
+    </div></div>
+</div>
+
+<!-- 04 РЕЖИМ НАСОСА -->
+<div class="panel fw">
+    <div class="ph"><span class="pn">04</span><span class="pt">Режим Насоса</span></div>
+    <div class="pb"><div class="ig">
+        <div class="sdiv"><span>НАСОС ДО ГНВП (РАБОЧИЙ РЕЖИМ)</span></div>
+        <div class="igrp scr-pair">
+            <div class="igrp-inner"><label>Расход до ГНВП — рабочий расход насоса до возникновения ГНВП</label><div class="iu"><input type="number" id="q_norm" value="20" step="0.1" oninput="calcDebounced()"><span class="ul">л/с</span></div></div>
+            <div class="igrp-inner"><label>P насоса до ГНВП — рабочее давление на нормальном расходе</label><div class="iu"><input type="number" id="p_norm" value="120" oninput="calcDebounced()"><span class="ul">атм</span></div></div>
+        </div>
+
+        <div class="sdiv"><span>НАСОС — SCR (МИНИМАЛЬНЫЙ РАСХОД)</span></div>
+        <div class="igrp scr-pair">
+            <div class="igrp-inner"><label>Расход SCR — минимальный расход насоса</label><div class="iu"><input type="number" id="q_scr" value="4" step="0.1" oninput="calcDebounced()"><span class="ul">л/с</span></div></div>
+            <div class="igrp-inner"><label>P насоса при SCR — давление насоса на медленном расходе</label><div class="iu"><input type="number" id="p_scr" value="55" oninput="calcDebounced()"><span class="ul">атм</span></div></div>
+        </div>
+    </div></div>
+</div>
+
+<!-- 05 ПАРАМЕТРЫ ГНВП -->
+<div class="panel fw">
+    <div class="ph"><span class="pn">05</span><span class="pt">ГНВП</span></div>
+    <div class="pb"><div class="ig">
+        <div class="sdiv"><span>ДАВЛЕНИЯ ЗАКРЫТОЙ СКВАЖИНЫ</span></div>
+        <div class="igrp fw"><label>SIDPP — давление на устье при закрытой скважине (буровой инструмент)</label><div class="iu"><input type="number" id="sidpp" value="45" oninput="calcDebounced()"><span class="ul">атм</span></div></div>
+        <div class="igrp fw"><label>SICP — избыточное давление в затрубном пространстве (закрытая скважина)</label><div class="iu"><input type="number" id="sicp" value="0" oninput="calcDebounced()"><span class="ul">атм</span></div></div>
+    </div></div>
+</div>
+
+<!-- РЕЗУЛЬТАТЫ -->
+<div class="panel fw">
+    <div class="rh"><span class="pt">▶ РЕЗУЛЬТАТЫ РАСЧЁТА</span><span class="badge" id="calc_ts">ОБНОВЛЕНО: —</span></div>
+    <div class="pb">
+        <!-- Timing -->
+        <div class="kg">
+            <div class="kc" onclick="showInfo('tdown')"><span class="kinfo">ⓘ</span><div class="klbl">ВРЕМЯ ВНИЗ (Устье → Долото)</div><div class="kval" id="r_tdown">—</div><div class="ksub" id="r_vdown_sub">— л</div></div>
+            <div class="kc" onclick="showInfo('tup')"><span class="kinfo">ⓘ</span><div class="klbl">ВРЕМЯ ВВЕРХ (Долото → Устье)</div><div class="kval" id="r_tup">—</div><div class="ksub" id="r_vup_sub">— л</div></div>
+            <div class="kc ks fw" onclick="showInfo('ttot')"><span class="kinfo">ⓘ</span><div class="klbl">⏱ ПОЛНЫЙ ЦИКЛ ЦИРКУЛЯЦИИ</div><div class="kval" id="r_ttot">—</div><div class="ksub" id="r_vtot_sub">—</div></div>
+            <div class="kc kd" onclick="showInfo('rho')"><span class="kinfo">ⓘ</span><div class="klbl">ρ РАСТВОРА ГЛУШЕНИЯ (+5%)</div><div class="kval" id="r_rho">—</div><div class="ksub">г/см³</div></div>
+            <div class="kc kw" onclick="showInfo('maasp1')"><span class="kinfo">ⓘ</span><div class="klbl">MAASP 1 (расчётное)</div><div class="kval" id="r_macp">—</div><div class="ksub" id="r_macp_sub">атм</div></div>
+            <div class="kc kd" onclick="showInfo('maasp2')"><span class="kinfo">ⓘ</span><div class="klbl">MAASP 2 (при ρ_kill в затрубе)</div><div class="kval" id="r_maasp2">—</div><div class="ksub" id="r_maasp2_sub">атм</div></div>
+            <div class="kc kw" onclick="showInfo('rho_max')"><span class="kinfo">ⓘ</span><div class="klbl">ρ_MAX — Макс. допустимая плотность</div><div class="kval" id="r_rho_max">—</div><div class="ksub" id="r_rho_max_sub">г/см³</div></div>
+        </div>
+        <!-- Pressure KPIs -->
+        <div class="kg3">
+            <div class="kc kw" onclick="showInfo('icp')"><span class="kinfo">ⓘ</span><div class="klbl">ICP — Начальное давл. циркуляции</div><div class="kval" id="r_icp">—</div><div class="ksub">атм · P_SCR + SIDPP</div></div>
+            <div class="kc ks" onclick="showInfo('fcp')"><span class="kinfo">ⓘ</span><div class="klbl">FCP — Конечное давл. циркуляции</div><div class="kval" id="r_fcp">—</div><div class="ksub">атм · P_SCR × ρ_kill / ρ</div></div>
+            <div class="kc" onclick="showInfo('ppl')"><span class="kinfo">ⓘ</span><div class="klbl">P_ПЛ — Фактическое пластовое давление</div><div class="kval" id="r_ppl">—</div><div class="ksub" id="r_ppl_sub">атм</div></div>
+            <div class="kc kd" onclick="showInfo('pscr_calc')"><span class="kinfo">ⓘ</span><div class="klbl">P_SCR РАСЧЁТНОЕ (Q_SCR / Q_норм)²</div><div class="kval" id="r_pscr_calc">—</div><div class="ksub" id="r_pscr_calc_sub">атм</div></div>
+        </div>
+
+        <div class="abar" id="abar"><span class="ai">⚠</span><span class="at" id="atxt"></span></div>
+
+        <!-- Volume table -->
+        <div style="margin-top:13px">
+            <div style="font-family:'Share Tech Mono',monospace;font-size:.54rem;color:var(--text-dim);letter-spacing:2px;margin-bottom:6px">ОБЪЁМНЫЙ БАЛАНС</div>
+            <table class="vtbl">
+                <thead><tr><th>СЕКЦИЯ</th><th>ДЛИНА</th><th>ГЕОМЕТРИЯ</th><th>ОБЪЁМ</th></tr></thead>
+                <tbody id="vtbody"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</div><!-- /mg -->
+
+<!-- KILL CHART -->
+<div class="cwrap">
+    <div class="chdr">
+        <div>
+            <div class="ctitle">ГРАФИК ГЛУШЕНИЯ — ДАВЛЕНИЕ НА НАСОСЕ vs ВРЕМЯ</div>
+            <div class="csub">ФАЗА 1: УСТЬЕ → ДОЛОТО · ОСЬ X: ВРЕМЯ (мин, метки каждые 5 мин) · ОСЬ Y: ДАВЛЕНИЕ (атм)</div>
+        </div>
+        <div class="cleg">
+            <div class="cli"><div class="cll" style="background:#ffa502"></div>P НАСОСА</div>
+            <div class="cli"><div class="cld" style="color:#ff4757"></div>MAASP 1</div>
+            <div class="cli"><div class="cld" style="color:#ff9f43"></div>MAASP 2</div>
+        </div>
+    </div>
+    <canvas id="killChart" height="230"></canvas>
+</div>
+
+<!-- KILL SCHEDULE -->
+<div class="panel" style="margin-top:10px">
+    <div class="ph"><span class="pn">KS</span><span class="pt">Расписание Глушения — Каждые 5 Минут</span></div>
+    <div class="pb">
+        <div style="font-family:'Share Tech Mono',monospace;font-size:.54rem;color:var(--text-dim);letter-spacing:2px;margin-bottom:7px">ЦЕЛЕВОЕ ДАВЛЕНИЕ НА НАСОСЕ — ФАЗА 1 (УСТЬЕ → ДОЛОТО)</div>
+        <div style="overflow-x:auto">
+            <table class="stbl">
+                <thead><tr>
+                    <th style="text-align:left">ВРЕМЯ</th>
+                    <th>ОБЪ. М³</th>
+                    <th>% ВНИЗ</th>
+                    <th>P НАСОС (атм)</th>
+                </tr></thead>
+                <tbody id="schedtbody"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<!-- HELP MODAL — СПРАВОЧНИК СОКРАЩЕНИЙ -->
+<div class="modal-overlay" id="helpOverlay" onclick="closeHelp(event)">
+  <div class="modal" style="max-width:620px;max-height:85vh;overflow-y:auto">
+    <span class="modal-close" onclick="document.getElementById('helpOverlay').classList.remove('open')">✕</span>
+    <div class="modal-title">📖 СПРАВОЧНИК — СОКРАЩЕНИЯ И АББРЕВИАТУРЫ</div>
+    <div class="modal-body" id="helpBody"></div>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+
+<!-- FORMULA MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+    <div class="modal">
+        <span class="modal-close" onclick="closeInfoModal()">✕</span>
+        <div class="modal-title" id="modalTitle"></div>
+        <div class="modal-body" id="modalBody"></div>
+    </div>
+</div>
+
+<script>
+
+const fmt  = (n,d=1) => (isNaN(n)||!isFinite(n)) ? '—' : n.toFixed(d);
+const fmtT = s => {
+    if(isNaN(s)||s<0) return '0 мин';
+    const totalMin = Math.round(s/60);
+    if(totalMin < 60) return totalMin + ' мин';
+    const h = Math.floor(totalMin/60), m = totalMin%60;
+    return h + 'ч ' + (m<10?'0':'') + m + 'мин';
+};
+
+let _calcTimer = null, _rafPending = false;
+function calcDebounced() {
+    if (_calcTimer) clearTimeout(_calcTimer);
+    _calcTimer = setTimeout(() => {
+        if (_rafPending) return;
+        _rafPending = true;
+        requestAnimationFrame(() => { _rafPending = false; calc(); });
+    }, 60);
+}
+
+function calc() {
+    const v  = id => parseFloat(document.getElementById(id)?.value)||0;
+    const vn = id => { const el = document.getElementById(id); const n = parseFloat(el?.value); return (el && el.value.trim() !== '' && n > 0) ? n : null; };
+
+    // ── INPUTS ──
+    const md     = v('md');
+    const tvd    = v('tvd')      || 1;
+    const tvd_s  = v('tvd_shoe') || 1;
+    const win    = v('window');
+    const dp_e   = v('dp_e');
+    const dp_t   = v('dp_t');
+    // ТБТ (в обсадной колонне)
+    const hwt_e  = v('hwt_e') || dp_e;
+    const hwt_t  = v('hwt_t') || 0;
+    const hwt_l  = v('hwt_l') || 0;
+    // КНБК (внизу, в открытом стволе)
+    const bha_e  = v('bha_e') || dp_e;
+    const bha_t  = v('bha_t') || 0;
+    const bha_l_input = v('bha_l') || 0;
+    // В режиме A (ОС): КНБК ограничена длиной открытого ствола
+    // В режиме B (ОК): КНБК целиком в ОК — длина не ограничивается
+    const bha_l = (md <= win)
+        ? bha_l_input
+        : Math.min(bha_l_input, Math.max(md - win, 0));
+    const cas_e  = v('cas_e');
+    const cas_t  = v('cas_t');
+    const oh_d   = v('oh_d');
+    const rho    = v('rho')   || 1;
+    const q      = v('q_ls') || 12;
+    const sidpp  = v('sidpp');
+    const sicp   = v('sicp');
+    const p_opr   = vn('p_opr');
+    const rho_opr = vn('rho_opr');
+    const g_frp   = vn('g_frp');
+
+    // ── MAASP 1 через ρ_max ──
+    //
+    // По опрессовке ОК:
+    //   Полное давление у башмака при опрессовке:
+    //     P_башм = P_опр + ρ_опр × 0.0981 × TVD_башм
+    //   Переводим в эквивалентную плотность (делим на 0.0981 × TVD_башм):
+    //     ρ_max_опр = P_башм / (0.0981 × TVD_башм)
+    //               = ρ_опр + P_опр / (0.0981 × TVD_башм)
+    //   P_опр / (0.0981 × TVD_башм) — это перевод давления опрессовки
+    //   в г/см³, а не сложение давления с плотностью напрямую.
+    const rho_max_opr = (p_opr !== null && rho_opr !== null && tvd_s > 0)
+        ? rho_opr + p_opr / (0.0981 * tvd_s)
+        : null;
+
+    // По градиенту ГРП [атм/м]:
+    //   G_ГРП — полный градиент давления ГРП у башмака.
+    //   Переводим в эквивалентную плотность: ρ_max_ГРП = G_ГРП / 0.0981
+    const rho_max_frp = (g_frp !== null)
+        ? g_frp / 0.0981
+        : null;
+
+    // ρ_max = наименьшее из двух ограничений
+    const rho_max_candidates = [rho_max_opr, rho_max_frp].filter(x => x !== null);
+    const rho_max = rho_max_candidates.length > 0 ? Math.min(...rho_max_candidates) : 0;
+
+    // MAASP 1 = давление на устье при плотности ρ_max минус гидростатика текущего раствора:
+    //   MAASP 1 = (ρ_max − ρ_тек) × 0.0981 × TVD_башм
+    const maasp = rho_max > 0 ? Math.max((rho_max - rho) * 0.0981 * tvd_s, 0) : 0;
+    // Промежуточные значения для подписи
+    const maasp_opr = rho_max_opr !== null ? (rho_max_opr - rho) * 0.0981 * tvd_s : null;
+    const maasp_frp = rho_max_frp !== null ? (rho_max_frp - rho) * 0.0981 * tvd_s : null;
+    const p_scr  = v('p_scr');
+    const q_scr  = v('q_scr') || 0.001;
+    const p_norm = v('p_norm');
+    const q_norm = v('q_norm') || 0.001;
+
+    // Расчётное давление SCR от рабочих параметров: P_SCR_расч = P_норм × (Q_SCR / Q_норм)²
+    const p_scr_calc = (p_norm > 0 && q_norm > 0) ? p_norm * Math.pow(q_scr / q_norm, 2) : 0;
+
+    // ── ДИАМЕТРЫ ──
+    const id_sbt = Math.max(dp_e  - 2*dp_t,  1);
+    const id_hwt = Math.max(hwt_e - 2*hwt_t, 1);
+    const id_bha = Math.max(bha_e - 2*bha_t, 1);
+    const id_cas = Math.max(cas_e - 2*cas_t, 1);
+    const A = d => Math.PI/4 * Math.pow(d/1000, 2);
+
+    // ══════════════════════════════════════════════════════════════
+    // ══════════════════════════════════════════════════════════════
+    // СХЕМА КОЛОННЫ — позиции от устья (0) вниз до долота (md), в метрах MD
+    //
+    //  Два режима:
+    //  A) md > win  — долото в открытом стволе (штатное глушение)
+    //     КНБК в ОС, ТБТ и СБТ в ОК
+    //
+    //  B) md ≤ win  — долото в обсадной колонне (глушение до окна)
+    //     Вся бурильная колонна в ОК, открытый ствол пустой
+    //
+    //  Граница ОК/ОС = win
+    //  ОК занимает [tvd_s ... win], выше башмака [0 ... tvd_s]
+    // ══════════════════════════════════════════════════════════════
+
+    const inCasing = (md <= win);  // весь инструмент в ОК
+
+    // Функция пересечения интервалов
+    const overlap = (a0, a1, b0, b1) => Math.max(Math.min(a1,b1) - Math.max(a0,b0), 0);
+
+    // ── Позиции инструмента ──
+    const p_bha_top = Math.max(md - bha_l, 0);
+
+    // ТБТ: при обоих режимах не глубже окна
+    const p_hwt_bot = Math.min(p_bha_top, win);
+    const p_hwt_top = Math.max(p_hwt_bot - hwt_l, 0);
+
+    // СБТ нижняя: от низа ТБТ до верха КНБК
+    const p_sbt_low_top = p_hwt_bot;
+    const p_sbt_low_bot = p_bha_top;
+    const len_sbt_low   = Math.max(p_sbt_low_bot - p_sbt_low_top, 0);
+
+    // СБТ верхняя: от устья до верха ТБТ
+    const len_sbt_up  = p_hwt_top;
+    const len_hwt_act = p_hwt_bot - p_hwt_top;
+
+    // ── ОБЪЁМ ВНУТРИ КОЛОННЫ (вниз) — одинаков для обоих режимов ──
+    const vol_bha_dn = A(id_bha) * bha_l                      * 1000;
+    const vol_hwt_dn = A(id_hwt) * len_hwt_act                * 1000;
+    const vol_sbt_dn = A(id_sbt) * (len_sbt_up + len_sbt_low) * 1000;
+    const vol_down   = vol_bha_dn + vol_hwt_dn + vol_sbt_dn;
+
+    // ══ ЗАТРУБ — ОТКРЫТЫЙ СТВОЛ [win ... md] ══
+    const len_oh = Math.max(md - win, 0);
+
+    let vol_oh_bha = 0, vol_oh_sbt = 0;
+    let len_oh_bha = 0, len_oh_sbt_low = 0;
+
+    if (!inCasing) {
+        // Режим A: КНБК в ОС
+        len_oh_bha     = bha_l;
+        len_oh_sbt_low = Math.max(
+            Math.min(p_sbt_low_bot, md) - Math.max(p_sbt_low_top, win), 0);
+        vol_oh_bha = Math.max(A(oh_d) - A(bha_e), 0) * len_oh_bha     * 1000;
+        vol_oh_sbt = Math.max(A(oh_d) - A(dp_e),  0) * len_oh_sbt_low * 1000;
+    }
+    // Режим B: ОС пустой — vol_oh_* остаются 0
+    const vol_oh_ann = vol_oh_bha + vol_oh_sbt;
+
+    // ══ ЗАТРУБ — ОБСАДНАЯ КОЛОННА [tvd_s ... win] ══
+    const cas0 = tvd_s, cas1 = win;
+
+    // Режим B: участок ОК выше долота [md..win] — пустой (без труб)
+    const len_cas_empty = inCasing ? Math.max(win - md, 0) : 0;
+
+    // Режим B: КНБК тоже в ОК — добавляем её аннулярный объём в ОК
+    const len_cas_bha     = inCasing ? overlap(p_bha_top, md,             cas0, cas1) : 0;
+    const len_cas_sbt_low = overlap(p_sbt_low_top, p_sbt_low_bot,         cas0, cas1);
+    const len_cas_hwt     = overlap(p_hwt_top,     p_hwt_bot,             cas0, cas1);
+    const len_cas_sbt_up  = overlap(0,             p_hwt_top,             cas0, cas1);
+    const len_cas_sbt     = len_cas_sbt_low + len_cas_sbt_up;
+
+    const vol_cas_empty = len_cas_empty * A(id_cas) * 1000;  // полное сечение ОК, нет труб
+    const vol_cas_bha  = inCasing ? Math.max(A(id_cas) - A(bha_e), 0) * len_cas_bha  * 1000 : 0;
+    const vol_cas_hwt  = Math.max(A(id_cas) - A(hwt_e), 0) * len_cas_hwt * 1000;
+    const vol_cas_sbt  = Math.max(A(id_cas) - A(dp_e),  0) * len_cas_sbt * 1000;
+    const vol_cas_ann  = vol_cas_empty + vol_cas_bha + vol_cas_hwt + vol_cas_sbt;
+
+    // ОК выше башмака [0 ... tvd_s] — СБТ проходит насквозь
+    const vol_above = Math.max(A(id_cas) - A(dp_e), 0) * tvd_s * 1000;
+
+    const vol_up  = Math.max(vol_oh_ann + vol_cas_ann + vol_above, 0);
+    const vol_tot = vol_down + vol_up;
+
+    const vol_ann_total    = vol_oh_ann + vol_cas_ann + vol_above;
+    const vol_ann_bit_win  = vol_oh_ann;
+    const vol_ann_win_surf = vol_cas_ann + vol_above;
+
+    // ── ВРЕМЕНА ──
+    const t_down = vol_down / q;
+    const t_up   = vol_up   / q;
+    const t_tot  = t_down + t_up;
+
+    // ── ПЛОТНОСТЬ ГЛУШЕНИЯ (API + коэф. запаса 5%) ──
+    const rho_kill = (rho + sidpp / (0.0981 * tvd)) * 1.05;
+
+    // ── ПЛАСТОВОЕ ДАВЛЕНИЕ ──
+    const p_pl = rho * 0.0981 * tvd + sidpp;
+
+    // ── ICP / FCP ──
+    const icp = p_scr + sidpp;
+    const fcp = p_scr * (rho_kill / rho);
+
+    // ── МАКСИМАЛЬНАЯ ДОПУСТИМАЯ ПЛОТНОСТЬ — уже рассчитана выше как rho_max ──
+    const delta_hydro = (rho_kill - rho) * 0.0981 * tvd_s;
+    const maasp2 = maasp > 0 ? maasp - delta_hydro : null;
+
+    // ── ОБНОВЛЕНИЕ UI ──
+    document.getElementById('r_tdown').textContent     = fmtT(t_down);
+    document.getElementById('r_tup').textContent       = fmtT(t_up);
+    document.getElementById('r_ttot').textContent      = fmtT(t_tot);
+    document.getElementById('r_vdown_sub').textContent = fmt(vol_down,0) + ' л / ' + fmt(vol_down/1000,2) + ' м³';
+    document.getElementById('r_vup_sub').textContent   = fmt(vol_up,0)   + ' л / ' + fmt(vol_up/1000,2)   + ' м³';
+    document.getElementById('r_vtot_sub').textContent  = fmt(vol_tot,0)  + ' л / ' + fmt(vol_tot/1000,2)  + ' м³';
+
+    document.getElementById('r_rho').textContent       = fmt(rho_kill,2);
+    document.getElementById('r_macp').textContent      = fmt(maasp,0);
+    { const sub = document.getElementById('r_macp_sub');
+      if (sub) {
+        const parts = [];
+        if (maasp_opr !== null) parts.push(`опр: ${fmt(maasp_opr,1)}`);
+        if (maasp_frp !== null) parts.push(`ГРП: ${fmt(maasp_frp,1)}`);
+        sub.textContent = parts.length ? 'атм · ' + parts.join(' / ') : 'атм · введите данные';
+      }
+    }
+    document.getElementById('r_maasp2').textContent    = maasp2 !== null ? fmt(maasp2,1) : '—';
+    document.getElementById('r_maasp2_sub').textContent= maasp2 !== null
+        ? `атм · MAASP1 − Δρ×0.0981×TVD_башм. (−${fmt(delta_hydro,1)} атм)`
+        : 'атм · введите данные опрессовки или G_ГРП';
+    document.getElementById('r_rho_max').textContent     = fmt(rho_max, 2);
+    document.getElementById('r_rho_max_sub').textContent = `г/см³ · у башмака TVD ${fmt(tvd_s,0)} м`;
+    { const el = document.getElementById('r_rho_max');
+      if (el) el.style.color = rho_kill > rho_max ? '#ff4757' : rho_kill > rho_max * 0.97 ? '#ffa502' : '#2ed573'; }
+
+    document.getElementById('r_icp').textContent       = fmt(icp,1);
+    document.getElementById('r_fcp').textContent       = fmt(fcp,1);
+    document.getElementById('r_ppl').textContent       = fmt(p_pl,1);
+    document.getElementById('r_ppl_sub').textContent   = `атм · ρ×0.0981×TVD + SIDPP`;
+    document.getElementById('r_pscr_calc').textContent = fmt(p_scr_calc,1);
+    document.getElementById('r_pscr_calc_sub').textContent = p_norm > 0
+        ? `атм · ${fmt(p_norm,0)}×(${fmt(q_scr,1)}/${fmt(q_norm,1)})²`
+        : 'атм · введите P и Q рабочие';
+
+    document.getElementById('qt_down').textContent   = fmtT(t_down);
+    document.getElementById('qt_up').textContent     = fmtT(t_up);
+    document.getElementById('qt_tcyc').textContent   = fmtT(t_tot);
+    document.getElementById('qt_rho').textContent    = fmt(rho_kill,2);
+    document.getElementById('qt_icp').textContent    = fmt(icp,0);
+    document.getElementById('qt_fcp').textContent    = fmt(fcp,0);
+    document.getElementById('qt_maasp2').textContent = maasp2 !== null ? fmt(maasp2,0) : '—';
+    { const el = document.getElementById('qt_rho_max');
+      if (el) {
+        el.textContent = fmt(rho_max, 2);
+        el.style.color = rho_kill > rho_max ? '#ff4757' : rho_kill > rho_max * 0.97 ? '#ffa502' : '#2ed573';
+      }
+    }
+    { const rnum = document.getElementById('qt_rho');
+      const numC = rho_kill>1.85?'#ff4757':rho_kill>1.55?'#ffd32a':'#00ffcc';
+      if(rnum) rnum.style.color = numC;
+    }
+
+    // Alerts
+    const ab = document.getElementById('abar'), at = document.getElementById('atxt');
+    const errs = [];
+    if (icp > maasp && maasp > 0)  errs.push(`⚠ ICP (${fmt(icp,1)} атм) > MAASP1 (${fmt(maasp,1)} атм) — риск превышения давления!`);
+    if (maasp2 !== null && fcp > maasp2) errs.push(`⚠ FCP (${fmt(fcp,1)} атм) > MAASP2 (${fmt(maasp2,1)} атм) — превышение при замещении затруба на ρ_kill!`);
+    if (fcp > icp)      errs.push(`⚠ FCP (${fmt(fcp,1)} атм) > ICP — проверьте P_SCR и SIDPP`);
+    if (rho_kill < rho) errs.push(`⚠ ρ_kill < ρ_исх — проверьте SIDPP`);
+    if (rho_kill > rho_max && rho_max > 0) errs.push(`⚠ ρ_kill (${fmt(rho_kill,2)}) > ρ_max (${fmt(rho_max,2)}) г/см³ — риск гидроразрыва у башмака!`);
+    if (sicp > 0 && sicp > maasp) errs.push(`⚠ SICP (${fmt(sicp,1)} атм) > MAASP — давление в затрубе превышает лимит!`);
+    if (errs.length)    { ab.style.display='flex'; at.textContent=errs.join(' | '); }
+    else                { ab.style.display='none'; }
+
+    const now = new Date();
+    document.getElementById('calc_ts').textContent =
+        `ОБНОВЛЕНО: ${now.getHours()}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
+
+    // ══ ТАБЛИЦА ОБЪЁМОВ ══
+    const hdr = (txt) =>
+        `<tr><td colspan="4" style="font-family:'Share Tech Mono',monospace;font-size:.5rem;` +
+        `color:var(--accent);letter-spacing:1.5px;padding:7px 6px 3px">${txt}</td></tr>`;
+    const fmtV = l => `${fmt(l,0)} л / ${fmt(l/1000,2)} м³`;
+    const fmtVx = (a,b,c) => `${fmt(a,0)}/${fmt(b,0)}/${fmt(c,0)} л<br><span style="font-size:.58rem;color:var(--text-dim)">${fmt(a/1000,2)}/${fmt(b/1000,2)}/${fmt(c/1000,2)} м³</span>`;
+
+    let vt = '';
+
+    // ▼ ВНУТРИ КОЛОННЫ
+    vt += hdr('▼ ВНУТРИ КОЛОННЫ (устье → долото)');
+    if (len_sbt_up > 0)
+        vt += `<tr><td>СБТ верхняя (выше ТБТ)</td><td>${fmt(len_sbt_up,0)} м</td>` +
+              `<td>ID ${fmt(id_sbt,1)} мм</td><td>${fmtV(A(id_sbt)*len_sbt_up*1000)}</td></tr>`;
+    if (len_hwt_act > 0)
+        vt += `<tr><td>ТБТ (в ОК)</td><td>${fmt(len_hwt_act,0)} м</td>` +
+              `<td>ID ${fmt(id_hwt,1)} мм</td><td>${fmtV(vol_hwt_dn)}</td></tr>`;
+    if (len_sbt_low > 0)
+        vt += `<tr><td>СБТ нижняя (ниже ТБТ)</td><td>${fmt(len_sbt_low,0)} м</td>` +
+              `<td>ID ${fmt(id_sbt,1)} мм</td><td>${fmtV(A(id_sbt)*len_sbt_low*1000)}</td></tr>`;
+    if (bha_l > 0)
+        vt += `<tr><td>КНБК (${inCasing ? 'в ОК' : 'в ОС'})</td><td>${fmt(bha_l,0)} м</td>` +
+              `<td>ID ${fmt(id_bha,1)} мм</td><td>${fmtV(vol_bha_dn)}</td></tr>`;
+    vt += `<tr class="sub"><td>▼ Трубное суммарно</td><td>${fmt(md,0)} м</td><td>—</td><td>${fmtV(vol_down)}</td></tr>`;
+
+    // ▲ ЗАТРУБ — ОТКРЫТЫЙ СТВОЛ
+    if (!inCasing) {
+        vt += hdr('▲ ЗАТРУБ — ОТКРЫТЫЙ СТВОЛ (долото → окно)');
+        if (len_oh_bha > 0)
+            vt += `<tr><td>Напротив КНБК</td><td>${fmt(len_oh_bha,0)} м</td>` +
+                  `<td>OH ${fmt(oh_d,1)} / BHA ${fmt(bha_e,1)} мм</td><td>${fmtV(vol_oh_bha)}</td></tr>`;
+        if (len_oh_sbt_low > 0)
+            vt += `<tr><td>Напротив СБТ нижней</td><td>${fmt(len_oh_sbt_low,0)} м</td>` +
+                  `<td>OH ${fmt(oh_d,1)} / DP ${fmt(dp_e,1)} мм</td><td>${fmtV(vol_oh_sbt)}</td></tr>`;
+        vt += `<tr class="sub"><td>▲ Затруб ОС суммарно</td><td>${fmt(len_oh,0)} м</td><td>—</td><td>${fmtV(vol_oh_ann)}</td></tr>`;
+    } else {
+        vt += hdr('▲ ЗАТРУБ — ОТКРЫТЫЙ СТВОЛ');
+        vt += `<tr><td colspan="3" style="color:var(--text-dim);font-style:italic">Долото в ОК — открытый ствол не задействован</td><td>0 л</td></tr>`;
+    }
+
+    // ▲ ЗАТРУБ — ОБСАДНАЯ КОЛОННА
+    vt += hdr('▲ ЗАТРУБ — ОБСАДНАЯ КОЛОННА (окно → устье)');
+    if (inCasing && len_cas_empty > 0)
+        vt += `<tr><td>ОК без труб (долото → окно)</td><td>${fmt(len_cas_empty,0)} м</td>` +
+              `<td>CasID ${fmt(id_cas,1)} мм</td><td>${fmtV(vol_cas_empty)}</td></tr>`;
+    if (inCasing && len_cas_bha > 0)
+        vt += `<tr><td>Напротив КНБК (в ОК)</td><td>${fmt(len_cas_bha,0)} м</td>` +
+              `<td>CasID ${fmt(id_cas,1)} / BHA ${fmt(bha_e,1)} мм</td><td>${fmtV(vol_cas_bha)}</td></tr>`;
+    if (len_cas_sbt_low > 0)
+        vt += `<tr><td>Напротив СБТ нижней</td><td>${fmt(len_cas_sbt_low,0)} м</td>` +
+              `<td>CasID ${fmt(id_cas,1)} / DP ${fmt(dp_e,1)} мм</td>` +
+              `<td>${fmtV(Math.max(A(id_cas)-A(dp_e),0)*len_cas_sbt_low*1000)}</td></tr>`;
+    if (len_cas_hwt > 0)
+        vt += `<tr><td>Напротив ТБТ</td><td>${fmt(len_cas_hwt,0)} м</td>` +
+              `<td>CasID ${fmt(id_cas,1)} / HWT ${fmt(hwt_e,1)} мм</td><td>${fmtV(vol_cas_hwt)}</td></tr>`;
+    if (len_cas_sbt_up > 0)
+        vt += `<tr><td>Напротив СБТ верхней</td><td>${fmt(len_cas_sbt_up,0)} м</td>` +
+              `<td>CasID ${fmt(id_cas,1)} / DP ${fmt(dp_e,1)} мм</td>` +
+              `<td>${fmtV(Math.max(A(id_cas)-A(dp_e),0)*len_cas_sbt_up*1000)}</td></tr>`;
+    vt += `<tr><td>ОК выше башмака (с СБТ)</td><td>${fmt(tvd_s,0)} м</td>` +
+          `<td>CasID ${fmt(id_cas,1)} / DP ${fmt(dp_e,1)} мм</td><td>${fmtV(vol_above)}</td></tr>`;
+    vt += `<tr class="sub"><td>▲ Затруб ОК суммарно</td><td>—</td><td>—</td><td>${fmtV(vol_cas_ann+vol_above)}</td></tr>`;
+
+    vt += `<tr class="sub"><td>▲ Затруб суммарно (долото → устье)</td><td>—</td><td>—</td><td>${fmtV(vol_ann_total)}</td></tr>`;
+    vt += `<tr class="tot"><td colspan="3">ИТОГО ВНИЗ / ВВЕРХ / ПОЛНЫЙ ЦИКЛ</td>` +
+          `<td>${fmtVx(vol_down, vol_up, vol_tot)}</td></tr>`;
+    document.getElementById('vtbody').innerHTML = vt;
+
+    updateChart(t_down, icp, fcp, maasp, maasp2);
+    updateSchedule(t_down, vol_down, icp, fcp, maasp, maasp2);
+    if (typeof SW !== 'undefined') SW.update(t_down, t_up, vol_down, vol_up);
+}
+
+// ══════════════════════════════════════════════════════════
+// KILL CHART — нативный Canvas (работает без Chart.js / офлайн)
+// ══════════════════════════════════════════════════════════
+let _chartData = null;
+
+// ══════════════════════════════════════════════════════════
+// KILL CHART — анимация прорисовки + интерактивный курсор
+// ══════════════════════════════════════════════════════════
+
+let _animRaf = null;        // текущий RAF анимации
+let _animProgress = 0;      // 0..1 прогресс прорисовки
+let _animStart = null;      // timestamp начала анимации
+const ANIM_DURATION = 900;  // мс — длительность анимации линии
+const ANIM_EASE = t => t < 0.5 ? 2*t*t : -1+(4-2*t)*t; // easeInOut
+
+// Состояние курсора
+let _cursor = { active: false, mx: 0, my: 0, touch: false };
+
+function updateChart(t_down, icp, fcp, maasp, maasp2) {
+    const tMin = t_down / 60;
+    const pts = [];
+    const seen = new Set();
+    const addPt = t => {
+        const tc = +(Math.min(t, tMin).toFixed(2));
+        if (seen.has(tc)) return; seen.add(tc);
+        const frac = tMin > 0 ? tc / tMin : 1;
+        pts.push({ t: tc, pump: icp - (icp - fcp) * frac });
+    };
+    for (let t = 0; t <= tMin + 0.25; t += 0.5) addPt(t);
+    for (let t = 0; t <= tMin; t += 5) addPt(t);
+    addPt(tMin);
+    pts.sort((a, b) => a.t - b.t);
+    _chartData = { tMin, icp, fcp, maasp, maasp2, pts };
+
+    // Запускаем анимацию заново
+    if (_animRaf) cancelAnimationFrame(_animRaf);
+    _animStart = null;
+    _animProgress = 0;
+    _animRaf = requestAnimationFrame(_animStep);
+}
+
+function _animStep(ts) {
+    if (!_animStart) _animStart = ts;
+    const elapsed = ts - _animStart;
+    _animProgress = Math.min(ANIM_EASE(Math.min(elapsed / ANIM_DURATION, 1)), 1);
+    drawChart(_animProgress);
+    if (_animProgress < 1) {
+        _animRaf = requestAnimationFrame(_animStep);
+    } else {
+        _animRaf = null;
+        _animProgress = 1;
+    }
+}
+
+let _canvasW = 0, _canvasH = 0, _canvasDpr = 0;
+
+function _buildChartLayout(canvas) {
+    const dpr = window.devicePixelRatio || 1;
+    const W = canvas.parentElement.clientWidth || 900;
+    const H = 230;
+    // Только пересоздаём если размер изменился
+    if (canvas.width !== W * dpr || canvas.height !== H * dpr || _canvasDpr !== dpr) {
+        canvas.width  = W * dpr;
+        canvas.height = H * dpr;
+        canvas.style.width  = W + 'px';
+        canvas.style.height = H + 'px';
+        _canvasW = W; _canvasH = H; _canvasDpr = dpr;
+    }
+    const ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return { ctx, W, H, dpr };
+}
+
+function drawChart(progress) {
+    if (progress === undefined) progress = 1;
+    const canvas = document.getElementById('killChart');
+    if (!canvas || !_chartData) return;
+    const { tMin, icp, fcp, maasp, maasp2, pts } = _chartData;
+
+    const { ctx, W, H } = _buildChartLayout(canvas);
+    const PAD = { top:18, right:22, bottom:40, left:66 };
+    const cW = W - PAD.left - PAD.right;
+    const cH = H - PAD.top - PAD.bottom;
+
+    const allY = pts.map(p => p.pump).concat([maasp, fcp, icp].concat(maasp2 !== null ? [maasp2] : []));
+    const yMin = Math.max(0, Math.floor(Math.min(...allY) * 0.9 / 10) * 10);
+    const yMax = Math.ceil(Math.max(...allY) * 1.1 / 10) * 10;
+    const xMax = Math.max(tMin, 1);
+
+    const tx = t => PAD.left + (t / xMax) * cW;
+    const ty = v => PAD.top + cH - ((v - yMin) / (yMax - yMin)) * cH;
+
+    // ── Фон ──
+    ctx.fillStyle = '#0a0e13';
+    ctx.fillRect(0, 0, W, H);
+
+    // ── Зоны опасности (прозрачные полосы над MAASP) ──
+    const tyM1 = ty(maasp);
+    ctx.fillStyle = 'rgba(255,71,87,0.04)';
+    ctx.fillRect(PAD.left, PAD.top, cW, Math.max(0, tyM1 - PAD.top));
+
+    // ── Y grid ──
+    const yStep = Math.max(10, Math.ceil((yMax - yMin) / 6 / 10) * 10);
+    ctx.font = '8px Courier New, monospace';
+    for (let y = yMin; y <= yMax; y += yStep) {
+        const py = ty(y);
+        ctx.strokeStyle = 'rgba(30,45,61,0.85)'; ctx.lineWidth = 0.5;
+        ctx.setLineDash([]);
+        ctx.beginPath(); ctx.moveTo(PAD.left, py); ctx.lineTo(PAD.left + cW, py); ctx.stroke();
+        ctx.fillStyle = '#6b8fa3'; ctx.textAlign = 'right';
+        ctx.fillText(y + ' атм', PAD.left - 6, py + 3);
+    }
+
+    // ── X grid (каждые 5 мин) ──
+    for (let t = 0; t <= xMax + 0.1; t += 5) {
+        const px = tx(t);
+        ctx.strokeStyle = 'rgba(0,180,216,0.10)'; ctx.lineWidth = 1;
+        ctx.setLineDash([2,4]);
+        ctx.beginPath(); ctx.moveTo(px, PAD.top); ctx.lineTo(px, PAD.top + cH); ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillStyle = '#6b8fa3'; ctx.textAlign = 'center'; ctx.font = '8px Courier New, monospace';
+        ctx.fillText(t + ' мин', px, PAD.top + cH + 14);
+    }
+
+    // ── Оси подписи ──
+    ctx.fillStyle = '#6b8fa3'; ctx.font = '9px Courier New, monospace'; ctx.textAlign = 'center';
+    ctx.fillText('ВРЕМЯ (мин)', PAD.left + cW / 2, H - 5);
+    ctx.save(); ctx.translate(11, PAD.top + cH / 2); ctx.rotate(-Math.PI / 2);
+    ctx.fillText('ДАВЛЕНИЕ (атм)', 0, 0); ctx.restore();
+
+    ctx.setLineDash([]);
+
+    // ── MAASP 2 (оранжевая пунктир) ──
+    if (maasp2 !== null) {
+        const tyM2 = ty(maasp2);
+        ctx.fillStyle = 'rgba(255,159,67,0.04)';
+        ctx.fillRect(PAD.left, tyM1, cW, Math.max(0, tyM2 - tyM1));
+        ctx.strokeStyle = '#ff9f43'; ctx.lineWidth = 1.5; ctx.setLineDash([5,4]);
+        ctx.beginPath(); ctx.moveTo(tx(0), tyM2); ctx.lineTo(tx(xMax), tyM2); ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillStyle = '#ff9f43'; ctx.font = 'bold 7px Courier New'; ctx.textAlign = 'right';
+        ctx.fillText('MAASP 2 · ' + maasp2.toFixed(1), tx(xMax) - 2, tyM2 - 3);
+    }
+
+    // ── MAASP 1 (красная пунктир) ──
+    ctx.strokeStyle = '#ff4757'; ctx.lineWidth = 1.5; ctx.setLineDash([7,4]);
+    ctx.beginPath(); ctx.moveTo(tx(0), ty(maasp)); ctx.lineTo(tx(xMax), ty(maasp)); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = '#ff4757'; ctx.font = 'bold 7px Courier New'; ctx.textAlign = 'right';
+    ctx.fillText('MAASP 1 · ' + maasp.toFixed(1), tx(xMax) - 2, ty(maasp) - 3);
+
+    // ── Вычисляем частичные точки по прогрессу анимации ──
+    const visibleT = xMax * progress;
+    const animPts = pts.filter(p => p.t <= visibleT);
+    // Добавляем интерполированную крайнюю точку
+    if (animPts.length > 0 && progress < 1) {
+        const frac2 = tMin > 0 ? Math.min(visibleT / tMin, 1) : 1;
+        animPts.push({ t: visibleT, pump: icp - (icp - fcp) * frac2 });
+    }
+
+    if (animPts.length > 1) {
+        // ── Area fill (анимированный) ──
+        ctx.beginPath();
+        animPts.forEach((p, i) => i === 0 ? ctx.moveTo(tx(p.t), ty(p.pump)) : ctx.lineTo(tx(p.t), ty(p.pump)));
+        ctx.lineTo(tx(animPts[animPts.length-1].t), ty(yMin));
+        ctx.lineTo(tx(animPts[0].t), ty(yMin));
+        ctx.closePath();
+        const grad = ctx.createLinearGradient(0, PAD.top, 0, PAD.top + cH);
+        grad.addColorStop(0,   'rgba(255,165,2,0.12)');
+        grad.addColorStop(0.6, 'rgba(255,165,2,0.04)');
+        grad.addColorStop(1,   'rgba(255,165,2,0.00)');
+        ctx.fillStyle = grad;
+        ctx.fill();
+
+        // ── Линия насоса — glow эффект (широкий слой + тонкий поверх) ──
+        // Glow
+        ctx.strokeStyle = 'rgba(255,165,2,0.18)'; ctx.lineWidth = 7; ctx.setLineDash([]);
+        ctx.beginPath();
+        animPts.forEach((p, i) => i === 0 ? ctx.moveTo(tx(p.t), ty(p.pump)) : ctx.lineTo(tx(p.t), ty(p.pump)));
+        ctx.stroke();
+        // Основная линия
+        ctx.strokeStyle = '#ffa502'; ctx.lineWidth = 2.2; ctx.setLineDash([]);
+        ctx.beginPath();
+        animPts.forEach((p, i) => i === 0 ? ctx.moveTo(tx(p.t), ty(p.pump)) : ctx.lineTo(tx(p.t), ty(p.pump)));
+        ctx.stroke();
+
+        // ── Бегущая точка на конце анимации ──
+        if (progress < 1) {
+            const last = animPts[animPts.length - 1];
+            const px2 = tx(last.t), py2 = ty(last.pump);
+            // Пульсирующий круг
+            const pulse = 0.5 + 0.5 * Math.sin(Date.now() / 200);
+            ctx.beginPath();
+            ctx.arc(px2, py2, 5 + pulse * 3, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255,165,2,${0.15 + pulse * 0.10})`;
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(px2, py2, 3.5, 0, Math.PI * 2);
+            ctx.fillStyle = '#ffa502'; ctx.fill();
+        }
+
+        // ── Маркеры начала и конца (только когда анимация завершена) ──
+        if (progress >= 1) {
+            const first = pts[0], last2 = pts[pts.length - 1];
+            [[first, 'ICP·'+icp.toFixed(1), 'right'], [last2, 'FCP·'+fcp.toFixed(1), 'left']].forEach(([p, lbl, align]) => {
+                const px2 = tx(p.t), py2 = ty(p.pump);
+                ctx.beginPath(); ctx.arc(px2, py2, 4, 0, Math.PI*2);
+                ctx.fillStyle = '#ffa502'; ctx.fill();
+                ctx.beginPath(); ctx.arc(px2, py2, 4, 0, Math.PI*2);
+                ctx.strokeStyle = '#0a0e13'; ctx.lineWidth = 1.5; ctx.stroke();
+                ctx.fillStyle = '#ffa502'; ctx.font = 'bold 8px Courier New';
+                ctx.textAlign = align;
+                ctx.fillText(lbl, align === 'right' ? px2 - 8 : px2 + 8, py2 - 7);
+            });
+        }
+    }
+
+    // Сохраняем метаданные для курсора
+    canvas._chartMeta = { tx, ty, xMax, yMin, yMax, pts, maasp, maasp2, PAD, cW, cH, W, H };
+}
+
+// ══════════════════════════════════════════════════════════
+// ИНТЕРАКТИВНЫЙ КУРСОР С ТУЛТИПОМ
+// ══════════════════════════════════════════════════════════
+(function () {
+    document.addEventListener('DOMContentLoaded', () => {
+        const canvas = document.getElementById('killChart');
+        if (!canvas) return;
+
+        canvas.parentElement.style.position = 'relative';
+
+        // Оверлей-канвас для курсора (поверх основного)
+        const overlay = document.createElement('canvas');
+        overlay.style.cssText = 'position:absolute;inset:0;pointer-events:none;';
+        canvas.parentElement.appendChild(overlay);
+
+        // Тултип
+        const tip = document.createElement('div');
+        tip.style.cssText = [
+            'position:absolute',
+            'pointer-events:none',
+            'display:none',
+            'background:rgba(17,24,32,0.96)',
+            'border:1px solid #00b4d8',
+            'border-radius:3px',
+            'padding:8px 11px',
+            'font:10px "Courier New",monospace',
+            'color:#cdd6e0',
+            'z-index:60',
+            'white-space:nowrap',
+            'box-shadow:0 4px 20px rgba(0,180,216,0.18)',
+            'line-height:1.7',
+            'min-width:160px'
+        ].join(';');
+        canvas.parentElement.appendChild(tip);
+
+        function drawCursor(mx, my) {
+            const m = canvas._chartMeta;
+            if (!m || !_chartData) return;
+
+            // Синхронизируем размер оверлея с основным канвасом
+            const dpr = window.devicePixelRatio || 1;
+            overlay.width  = m.W * dpr;
+            overlay.height = m.H * dpr;
+            overlay.style.width  = m.W + 'px';
+            overlay.style.height = m.H + 'px';
+
+            const ctx2 = overlay.getContext('2d');
+            ctx2.scale(dpr, dpr);
+            ctx2.clearRect(0, 0, m.W, m.H);
+
+            // Клип к области графика
+            const inChart = mx >= m.PAD.left && mx <= m.PAD.left + m.cW
+                         && my >= m.PAD.top  && my <= m.PAD.top  + m.cH;
+            if (!inChart) { tip.style.display = 'none'; return; }
+
+            const t = Math.max(0, Math.min(m.xMax, (mx - m.PAD.left) / m.cW * m.xMax));
+            const frac = m.xMax > 0 ? Math.min(t / m.xMax, 1) : 1;
+            const pump = _chartData.icp - (_chartData.icp - _chartData.fcp) * frac;
+            const px   = m.tx(t);
+            const py   = m.ty(pump);
+
+            // Вертикальная линия курсора
+            ctx2.setLineDash([4, 3]);
+            ctx2.strokeStyle = 'rgba(0,180,216,0.55)';
+            ctx2.lineWidth = 1;
+            ctx2.beginPath();
+            ctx2.moveTo(px, m.PAD.top);
+            ctx2.lineTo(px, m.PAD.top + m.cH);
+            ctx2.stroke();
+            ctx2.setLineDash([]);
+
+            // Горизонтальная нить к оси Y
+            ctx2.strokeStyle = 'rgba(255,165,2,0.25)';
+            ctx2.lineWidth = 0.7;
+            ctx2.setLineDash([3, 4]);
+            ctx2.beginPath();
+            ctx2.moveTo(m.PAD.left, py);
+            ctx2.lineTo(px, py);
+            ctx2.stroke();
+            ctx2.setLineDash([]);
+
+            // Внешний кружок (glow)
+            ctx2.beginPath();
+            ctx2.arc(px, py, 7, 0, Math.PI * 2);
+            ctx2.fillStyle = 'rgba(255,165,2,0.15)';
+            ctx2.fill();
+            // Внутренний кружок
+            ctx2.beginPath();
+            ctx2.arc(px, py, 4, 0, Math.PI * 2);
+            ctx2.fillStyle = '#ffa502';
+            ctx2.fill();
+            ctx2.beginPath();
+            ctx2.arc(px, py, 4, 0, Math.PI * 2);
+            ctx2.strokeStyle = '#0a0e13';
+            ctx2.lineWidth = 1.5;
+            ctx2.stroke();
+
+            // Метка времени на оси X
+            ctx2.fillStyle = '#00b4d8';
+            ctx2.font = 'bold 8px Courier New';
+            ctx2.textAlign = 'center';
+            ctx2.fillText(t.toFixed(1) + ' мин', px, m.PAD.top + m.cH + 14);
+
+            // Метка давления на оси Y
+            ctx2.fillStyle = '#ffa502';
+            ctx2.textAlign = 'right';
+            ctx2.fillText(pump.toFixed(1), m.PAD.left - 6, py + 3);
+
+            // ── Тултип ──
+            const overM1 = pump > _chartData.maasp;
+            const overM2 = !overM1 && _chartData.maasp2 !== null && pump > _chartData.maasp2;
+            const status = overM1 ? '⚠ ПРЕВЫШЕНИЕ MAASP 1'
+                         : overM2 ? '⚠ ПРЕВЫШЕНИЕ MAASP 2'
+                         : '✓ В НОРМЕ';
+            const statusColor = overM1 ? '#ff4757' : overM2 ? '#ff9f43' : '#2ed573';
+            const pctStr = (frac * 100).toFixed(0) + '% вниз';
+
+            tip.innerHTML = [
+                `<div style="color:#00b4d8;font-size:9px;letter-spacing:1.5px;margin-bottom:4px">` +
+                `⏱ t = ${t.toFixed(1)} мин · ${pctStr}</div>`,
+                `<div style="display:grid;grid-template-columns:auto auto;gap:1px 10px">`,
+                `<span style="color:#8faab8">P насоса</span><span style="color:#ffa502;font-weight:700">${pump.toFixed(1)} атм</span>`,
+                `<span style="color:#8faab8">ICP</span><span style="color:#cdd6e0">${_chartData.icp.toFixed(1)} атм</span>`,
+                `<span style="color:#8faab8">FCP</span><span style="color:#cdd6e0">${_chartData.fcp.toFixed(1)} атм</span>`,
+                `<span style="color:#8faab8">MAASP 1</span><span style="color:#ff4757">${_chartData.maasp.toFixed(1)} атм</span>`,
+                `<span style="color:#8faab8">MAASP 2</span><span style="color:#ff9f43">${_chartData.maasp2 !== null ? _chartData.maasp2.toFixed(1) + ' атм' : '—'}</span>`,
+                `</div>`,
+                `<div style="margin-top:5px;padding-top:4px;border-top:1px solid #1e2d3d;` +
+                `font-size:9px;color:${statusColor}">${status}</div>`
+            ].join('');
+
+            // Позиционирование тултипа (не выходит за правый край)
+            const tipW = 195;
+            const canvasRect = canvas.getBoundingClientRect();
+            let tipLeft = mx + 14;
+            if (tipLeft + tipW > m.W - 10) tipLeft = mx - tipW - 14;
+            const tipTop = Math.max(m.PAD.top, Math.min(py - 30, m.PAD.top + m.cH - 100));
+            tip.style.left = tipLeft + 'px';
+            tip.style.top  = tipTop + 'px';
+            tip.style.display = 'block';
+        }
+
+        function clearCursor() {
+            const dpr = window.devicePixelRatio || 1;
+            const ctx2 = overlay.getContext('2d');
+            const m = canvas._chartMeta;
+            if (m) ctx2.clearRect(0, 0, m.W * dpr, m.H * dpr);
+            tip.style.display = 'none';
+        }
+
+        // Мышь
+        let _mmRaf = null;
+        canvas.addEventListener('mousemove', e => {
+            if (_mmRaf) return;
+            _mmRaf = requestAnimationFrame(() => {
+                _mmRaf = null;
+                const rect = canvas.getBoundingClientRect();
+                drawCursor(e.clientX - rect.left, e.clientY - rect.top);
+            });
+        }, { passive: true });
+        canvas.addEventListener('mouseleave', clearCursor, { passive: true });
+
+        // Touch (мобильные)
+        canvas.addEventListener('touchmove', e => {
+            e.preventDefault();
+            const rect = canvas.getBoundingClientRect();
+            const touch = e.touches[0];
+            drawCursor(touch.clientX - rect.left, touch.clientY - rect.top);
+        }, { passive: false });
+        canvas.addEventListener('touchend', clearCursor, { passive: true });
+    });
+})();
+
+let _resizeTimer = null;
+window.addEventListener('resize', () => {
+    if (_resizeTimer) clearTimeout(_resizeTimer);
+    _resizeTimer = setTimeout(() => {
+        if (_chartData) requestAnimationFrame(() => drawChart(_animProgress));
+    }, 150);
+}, { passive: true });
+
+// ══════════════════════════════════════════════════════════
+// KILL SCHEDULE TABLE — every 5 minutes
+// ══════════════════════════════════════════════════════════
+function updateSchedule(t_down, vol_down, icp, fcp, maasp, maasp2) {
+    const tMin = t_down / 60;
+    const marks = new Set();
+    marks.add(0);
+    for (let t = 5; t < tMin; t += 5) marks.add(Math.round(t*10)/10);
+    marks.add(Math.round(tMin*10)/10);
+
+    let rows = '';
+    [...marks].sort((a,b)=>a-b).forEach(t => {
+        const frac   = tMin > 0 ? Math.min(t / tMin, 1) : 1;
+        const pPump  = icp - (icp - fcp) * frac;
+        const volP   = frac * vol_down;
+        const pct    = (frac * 100).toFixed(0);
+        const isMS   = (t === 0 || frac >= .999);
+        const over1  = pPump > maasp;
+        const over2  = maasp2 !== null && pPump > maasp2;
+        const pStyle = over1 ? ' style="color:var(--danger)"' : (over2 ? ' style="color:var(--warn)"' : '');
+        rows += `<tr${isMS?' class="ms"':''}>
+            <td>${t.toFixed(1)} мин</td>
+            <td>${(volP/1000).toFixed(2)}</td>
+            <td>${pct}%</td>
+            <td${pStyle}>${pPump.toFixed(1)} атм</td>
+        </tr>`;
+    });
+
+    document.getElementById('schedtbody').innerHTML = rows;
+}
+
+// ══════════════════════════════════════════════════════════
+// FORMULA TOOLTIPS
+// ══════════════════════════════════════════════════════════
+const FORMULAS = {
+    tdown: {
+        title: 'ВРЕМЯ ВНИЗ (Устье → Долото)',
+        body: `Объём трубного пространства (внутри СБТ):
+  V_труб = π/4 × ID² × MD  [л]
+
+  где ID = OD_СБТ − 2 × стенка
+
+Время:
+  t_вниз = V_труб / Q
+
+  Q — рабочий расход [л/с]
+  Результат в секундах → мм:сс`
+    },
+    tup: {
+        title: 'ВРЕМЯ ВВЕРХ (Долото → Устье)',
+        body: `Суммарный объём затрубного пространства:
+  V_затруб = V_ОС + V_ОК_окно→башмак + V_ОК_башмак→устье
+
+  V_ОС = π/4 × (D_ОС² − OD_СБТ²) × len_ОС
+  V_ОК(с трубой) = π/4 × (ID_ОК² − OD_СБТ²) × len
+  V_ОК(без трубы) = π/4 × ID_ОК² × TVD_окна
+
+Время:
+  t_вверх = V_затруб / Q`
+    },
+    ttot: {
+        title: 'ПОЛНЫЙ ЦИКЛ ЦИРКУЛЯЦИИ',
+        body: `Сумма времени вниз и вверх:
+
+  t_цикл = t_вниз + t_вверх
+
+  t_вниз — время заполнения трубного пространства
+  t_вверх — время вытеснения затрубного пространства`
+    },
+    rho: {
+        title: 'ПЛОТНОСТЬ РАСТВОРА ГЛУШЕНИЯ',
+        body: `Плотность глушения (API стандарт):
+  ρ_kill = (ρ_исх + SIDPP / (0.0981 × TVD_забой)) × 1.05
+
+  SIDPP — давление на устье при закрытой скважине [атм]
+  TVD   — вертикальная глубина забоя [м]
+  0.0981 — коэффициент пересчёта [атм/м на г/см³]`
+    },
+    maasp1: {
+        title: 'MAASP 1 — Расчётное максимальное давление на устье',
+        body: `Рассчитывается через максимально допустимую
+плотность раствора ρ_max.
+
+Цепочка расчёта:
+
+1) ρ_max из опрессовки ОК:
+
+   Полное давление у башмака при опрессовке:
+     P_башм = P_опр + ρ_опр × 0.0981 × TVD_башм
+
+   Переводим в эквивалентную плотность:
+     ρ_max_опр = P_башм / (0.0981 × TVD_башм)
+               = ρ_опр + P_опр / (0.0981 × TVD_башм)
+
+   Примечание: P_опр / (0.0981 × TVD_башм) — это
+   перевод давления опрессовки в г/см³ (не сложение
+   атм с г/см³), результат добавляется к ρ_опр.
+
+2) ρ_max из градиента ГРП [атм/м]:
+     ρ_max_ГРП = G_ГРП / 0.0981
+
+3) ρ_max = min(ρ_max_опр, ρ_max_ГРП)
+
+4) MAASP 1 = (ρ_max − ρ_тек) × 0.0981 × TVD_башм
+
+   Смысл: какое избыточное давление можно приложить
+   на устье сверх гидростатики текущего раствора,
+   не достигнув предела прочности колонны или ГРП.`
+    },
+    maasp2: {
+        title: 'MAASP 2 — При замещении затруба на ρ_kill',
+        body: `При закачке раствора глушения гидростатика
+в затрубе возрастает, поэтому допустимое
+давление на устье уменьшается:
+
+  MAASP 2 = MAASP 1 − Δρ × 0.0981 × TVD_окна
+
+  Δρ = ρ_kill − ρ_исх  [г/см³]
+  TVD_окна — вертикальная глубина окна [м]
+
+  MAASP 2 — критический лимит на устье
+  в момент полного замещения затруба.`
+    },
+    icp: {
+        title: 'ICP — Начальное давление циркуляции',
+        body: `Давление на насосе в начале глушения
+(при SCR расходе, в момент старта циркуляции):
+
+  ICP = P_SCR + SIDPP
+
+  P_SCR  — давление насоса при минимальном расходе [атм]
+  SIDPP  — давление на устье при закрытой скважине [атм]
+
+  ICP — стартовое давление на насосе.
+  По мере заполнения трубного пространства раствором
+  глушения гидростатика в трубах растёт, и давление
+  на насосе постепенно снижается от ICP до FCP.
+
+  FCP достигается в момент когда раствор глушения
+  доходит до долота — трубное пространство полностью
+  заполнено тяжёлым раствором.`
+    },
+    fcp: {
+        title: 'FCP — Конечное давление циркуляции',
+        body: `Давление на насосе при выходе раствора
+глушения на долото (скважина заглушена):
+
+  FCP = P_SCR × (ρ_kill / ρ_исх)
+
+  P_SCR   — давление при SCR расходе [атм]
+  ρ_kill  — плотность раствора глушения [г/см³]
+  ρ_исх   — исходная плотность раствора [г/см³]
+
+  FCP < ICP (раствор тяжелее → меньше давления
+  нужно для удержания пласта).`
+    },
+    ppl: {
+        title: 'P_ПЛ — Фактическое пластовое давление',
+        body: `Давление пластового флюида на глубине забоя:
+
+  P_пл = ρ_исх × 0.0981 × TVD_забой + SIDPP
+
+  ρ_исх   — текущая плотность раствора [г/см³]
+  TVD     — вертикальная глубина забоя [м]
+  SIDPP   — давление на устье при закрытой
+            скважине со стороны трубного пространства [атм]
+  0.0981  — коэффициент [атм/(г/см³·м)]
+
+  Физический смысл: пластовое давление равно
+  гидростатике столба раствора плюс избыточное
+  давление на устье при закрытой скважине.`
+    },
+    sicp: {
+        title: 'SICP — Избыточное давление в затрубном пространстве',
+        body: `Давление на устье в затрубном пространстве
+при закрытой скважине:
+
+  SICP — вводится оператором вручную [атм]
+
+  При нормальном ГНВП SICP может отличаться от SIDPP
+  из-за разной плотности флюида в трубном и затрубном
+  пространствах (газ всплывает в затрубе быстрее).
+
+  SICP используется:
+  — для контроля давления в затрубе при глушении
+  — для мониторинга миграции газа к устью
+  — SICP не должен превышать MAASP`
+    },
+    rho_max: {
+        title: 'ρ_MAX — Максимально допустимая плотность раствора',
+        body: `Максимальная плотность бурового раствора,
+при которой давление у башмака обсадной
+не превысит давление гидроразрыва пласта.
+
+Рассчитывается как наименьшее из:
+
+1) По опрессовке ОК:
+
+   Полное давление у башмака при опрессовке:
+     P_башм = P_опр + ρ_опр × 0.0981 × TVD_башм
+
+   Переводим в эквивалентную плотность:
+     ρ_max_опр = P_башм / (0.0981 × TVD_башм)
+               = ρ_опр + P_опр / (0.0981 × TVD_башм)
+
+   P_опр / (0.0981 × TVD_башм) — перевод давления
+   опрессовки в г/см³, не сложение атм с г/см³.
+
+2) По градиенту ГРП [атм/м]:
+     ρ_max_ГРП = G_ГРП / 0.0981
+
+   G_ГРП — полный градиент давления ГРП у башмака.
+   Делим на 0.0981 чтобы перевести атм/м в г/см³.
+
+   ρ_max = min(ρ_max_опр, ρ_max_ГРП)
+
+Цветовая индикация:
+  🟢 Зелёный  — ρ_kill значительно ниже ρ_max
+  🟠 Оранжевый — ρ_kill близко к ρ_max (< 3%)
+  🔴 Красный   — ρ_kill превышает ρ_max (риск ГРП)`
+    },
+    pscr_calc: {
+        title: 'P_SCR РАСЧЁТНОЕ — Давление насоса при минимальном расходе',
+        body: `Расчётное давление насоса при SCR расходе,
+определённое из рабочих параметров до ГНВП.
+
+Формула (закон квадратичного сопротивления):
+
+  P_SCR_расч = P_норм × (Q_SCR / Q_норм)²
+
+  P_норм  — давление насоса до ГНВП [атм]
+  Q_норм  — рабочий расход до ГНВП [л/с]
+  Q_SCR   — минимальный расход (SCR) [л/с]
+
+Физический смысл:
+  Гидравлические потери в системе пропорциональны
+  квадрату расхода. При снижении расхода с Q_норм
+  до Q_SCR давление падает пропорционально (Q_SCR/Q_норм)².
+
+Пример:
+  P_норм = 120 атм, Q_норм = 20 л/с, Q_SCR = 4 л/с
+  P_SCR_расч = 120 × (4/20)² = 120 × 0.04 = 4.8 атм
+
+Применение:
+  Используйте это значение для проверки и уточнения
+  поля «P насоса при SCR» в блоке 04.
+  Расчётное значение точнее прямого замера,
+  если SCR-тест не проводился.`
+    }
+};
+
+function showInfo(key) {
+    const f = FORMULAS[key];
+    if (!f) return;
+    document.getElementById('modalTitle').textContent = f.title;
+    document.getElementById('modalBody').textContent  = f.body;
+    document.getElementById('modalOverlay').classList.add('open');
+}
+function closeInfoModal() {
+    document.getElementById('modalOverlay').classList.remove('open');
+}
+function closeModal(e) {
+    if (e.target === document.getElementById('modalOverlay')) closeInfoModal();
+}
+
+// ══════════════════════════════════════════════════════════
+// СПРАВОЧНИК СОКРАЩЕНИЙ
+// ══════════════════════════════════════════════════════════
+const GLOSSARY = [
+  {
+    title: '🔵 ГЕОМЕТРИЯ СКВАЖИНЫ',
+    items: [
+      ['MD', 'Measured Depth — глубина по стволу скважины (вдоль траектории бурения), м'],
+      ['TVD', 'True Vertical Depth — истинная вертикальная глубина (проекция MD на вертикаль), м'],
+      ['ОС / OH', 'Открытый Ствол (Open Hole) — необсаженный участок скважины ниже башмака обсадной колонны'],
+      ['ОК', 'Обсадная Колонна — стальные трубы, цементируемые в скважине для крепления стенок'],
+      ['Башмак ОК', 'Нижний конец обсадной колонны; граница между ОК и открытым стволом'],
+      ['Окно', 'Глубина MD нижнего конца обсадной колонны (= башмак по MD)'],
+      ['TVD башмака', 'Вертикальная глубина башмака обсадной колонны, используется при расчёте MAASP 2'],
+      ['Ø нар / OD', 'Наружный диаметр трубы (Outer Diameter), мм'],
+      ['Стенка / WT', 'Wall Thickness — толщина стенки трубы, мм'],
+      ['ID', 'Inner Diameter — внутренний диаметр трубы: ID = OD − 2 × стенка, мм'],
+    ]
+  },
+  {
+    title: '🟡 БУРИЛЬНАЯ КОЛОННА',
+    items: [
+      ['СБТ / DP', 'Стальные Бурильные Трубы (Drill Pipe) — основная часть колонны от устья до КНБК / ТБТ'],
+      ['ТБТ / HWDP', 'Тяжёлые (Утяжелённые) Бурильные Трубы (Heavy Weight Drill Pipe) — трубы с увеличенной толщиной стенки; всегда находятся в обсадной колонне между СБТ и КНБК'],
+      ['КНБК / BHA', 'Компоновка Низа Бурильной Колонны (Bottom Hole Assembly) — нижняя часть колонны (долото, забойный двигатель, УБТ и др.); всегда в открытом стволе'],
+      ['УБТ / DC', 'Утяжелённые Бурильные Трубы (Drill Collars) — входят в состав КНБК; толстостенные трубы для создания нагрузки на долото'],
+    ]
+  },
+  {
+    title: '🟢 ПАРАМЕТРЫ НАСОСА И ЦИРКУЛЯЦИИ',
+    items: [
+      ['SCR', 'Slow Circulation Rate — медленный (редуцированный) расход насоса, используемый при глушении скважины; позволяет контролировать давление при подъёме газовой пачки'],
+      ['P_SCR', 'Давление на насосе при расходе SCR, атм; снимается до ГНВП как базовый показатель'],
+      ['Q_SCR', 'Расход насоса при SCR, л/с'],
+      ['Q_глуш.', 'Расход глушения — расход насоса во время операции глушения, л/с; обычно равен Q_SCR'],
+      ['ρ (рho)', 'Плотность бурового раствора, г/см³; текущая плотность в скважине до ГНВП'],
+    ]
+  },
+  {
+    title: '🔴 ДАВЛЕНИЯ И ГНВП',
+    items: [
+      ['ГНВП', 'Газонефтеводопроявление — незапланированный приток пластового флюида в скважину; требует немедленного закрытия превентора и проведения глушения'],
+      ['SIDPP', 'Shut-In Drill Pipe Pressure — давление на устье в трубном пространстве при закрытой скважине (ГНВП), атм; отражает разницу между пластовым и гидростатическим давлением'],
+      ['SICP', 'Shut-In Casing Pressure — давление на устье в затрубном пространстве при закрытой скважине, атм; может отличаться от SIDPP из-за газовой миграции в затрубе'],
+      ['MAASP', 'Maximum Allowable Annular Surface Pressure — максимально допустимое давление на устье в затрубном пространстве, атм; определяется по результатам LOT/FIT у башмака ОК'],
+      ['MAASP 1', 'MAASP при текущей плотности раствора — введённое оператором значение'],
+      ['MAASP 2', 'MAASP при плотности раствора глушения (ρ_kill) в затрубе; уменьшается относительно MAASP 1 из-за роста гидростатики: MAASP2 = MAASP1 − Δρ × 0.0981 × TVD_башмака'],
+      ['LOT / FIT', 'Leak-Off Test / Formation Integrity Test — испытание пласта и башмака ОК на поглощение; результат используется для определения MAASP'],
+      ['P_пл', 'Пластовое давление — давление флюида в пласте на глубине забоя; P_пл = ρ × 0.0981 × TVD + SIDPP, атм'],
+    ]
+  },
+  {
+    title: '🔵 ПАРАМЕТРЫ ГЛУШЕНИЯ (KILL SHEET)',
+    items: [
+      ['ρ_kill', 'Плотность раствора глушения — необходимая плотность для создания гидростатики, уравновешивающей пластовое давление; ρ_kill = (ρ + SIDPP / (0.0981 × TVD)) × 1.05, г/см³'],
+      ['+5% (коэф.)', 'Запас безопасности на плотность раствора глушения; стандартная практика во избежание недоглушения'],
+      ['ICP', 'Initial Circulating Pressure — начальное давление на насосе в начале глушения (при SCR); ICP = P_SCR + SIDPP, атм'],
+      ['FCP', 'Final Circulating Pressure — конечное давление на насосе, когда раствор глушения достигает долота; FCP = P_SCR × (ρ_kill / ρ), атм'],
+      ['Kill Curve', 'График изменения давления насоса от ICP до FCP в процессе закачки раствора глушения вниз по трубам (Фаза 1 — устье → долото)'],
+      ['Фаза 1', 'Закачка раствора глушения в трубное пространство (устье → долото); давление насоса снижается от ICP до FCP'],
+      ['Фаза 2', 'Вытеснение пластового флюида из затруба раствором глушения (долото → устье); давление поддерживается на FCP'],
+    ]
+  },
+  {
+    title: '📐 ОБЪЁМЫ И ВРЕМЯ',
+    items: [
+      ['V_труб.', 'Объём трубного пространства (внутри бурильной колонны от устья до долота), л'],
+      ['V_затруб.', 'Объём затрубного пространства (между бурильной колонной и стенкой скважины/ОК), л'],
+      ['V_цикл', 'Полный объём одного цикла циркуляции = V_труб + V_затруб, л'],
+      ['t_вниз', 'Время закачки раствора от устья до долота = V_труб / Q_глуш., мин:сс'],
+      ['t_вверх', 'Время вытеснения затруба = V_затруб / Q_глуш., мин:сс'],
+      ['t_цикл', 'Полное время одного цикла = t_вниз + t_вверх'],
+    ]
+  },
+  {
+    title: '⚙️ ЕДИНИЦЫ ИЗМЕРЕНИЯ',
+    items: [
+      ['атм', 'Атмосфера — единица давления; 1 атм ≈ 0.0981 МПа ≈ 14.7 psi'],
+      ['г/см³', 'Грамм на кубический сантиметр — единица плотности (= кг/л = т/м³)'],
+      ['л/с', 'Литр в секунду — единица объёмного расхода'],
+      ['мм', 'Миллиметр — единица диаметра и толщины стенки труб'],
+      ['м', 'Метр — единица глубины и длины'],
+      ['л', 'Литр — единица объёма (1 м³ = 1000 л)'],
+      ['м³', 'Кубический метр — единица объёма (в таблице расписания — м³)'],
+      ['0.0981', 'Коэффициент пересчёта: давление [атм] = плотность [г/см³] × 0.0981 × глубина [м]'],
+    ]
+  },
+  {
+    title: '🛡️ ОБОРУДОВАНИЕ И ПРОЧЕЕ',
+    items: [
+      ['ПВО / BOP', 'Противовыбросовое оборудование (Blowout Preventer) — превентор; устанавливается на устье, перекрывает скважину при ГНВП'],
+      ['Устье', 'Верхняя точка скважины на поверхности (0 м MD)'],
+      ['Долото / Bit', 'Буровой инструмент на конце колонны; находится на глубине MD забоя'],
+      ['Забой', 'Нижняя точка скважины (= MD долота)'],
+      ['v1.0', 'Версия приложения Well Control Pro'],
+      ['WCP', 'Well Control Pro — аббревиатура данного приложения'],
+    ]
+  }
+];
+
+function openHelp() {
+    const overlay = document.getElementById('helpOverlay');
+    const body = document.getElementById('helpBody');
+    body.innerHTML = GLOSSARY.map(sec => `
+        <div class="help-section">
+            <div class="help-section-title">${sec.title}</div>
+            ${sec.items.map(([term, def]) => `
+            <div class="help-row">
+                <div class="help-term">${term}</div>
+                <div class="help-def">${def}</div>
+            </div>`).join('')}
+        </div>`).join('');
+    overlay.classList.add('open');
+}
+function closeHelp(e) {
+    const overlay = document.getElementById('helpOverlay');
+    if (e.target === overlay) overlay.classList.remove('open');
+}
+
+// ══════════════════════════════════════════════════════════
+// AUTOSAVE / AUTOLOAD
+// ══════════════════════════════════════════════════════════
+const SAVE_KEY = 'wcp_v1_inputs';
+const INPUT_IDS = ['md','tvd','tvd_shoe','window','cas_e','cas_t','oh_d','dp_e','dp_t','hwt_e','hwt_t','hwt_l','bha_e','bha_t','bha_l','q_ls','rho','sidpp','sicp','p_opr','rho_opr','g_frp','p_scr','q_scr','p_norm','q_norm'];
+
+function saveInputs() {
+    const data = {};
+    INPUT_IDS.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) data[id] = el.value;
+    });
+    try { localStorage.setItem(SAVE_KEY, JSON.stringify(data)); } catch(e) {}
+}
+
+function loadInputs() {
+    try {
+        const raw = localStorage.getItem(SAVE_KEY);
+        if (!raw) return false;
+        const data = JSON.parse(raw);
+        INPUT_IDS.forEach(id => {
+            const el = document.getElementById(id);
+            if (el && data[id] !== undefined) el.value = data[id];
+        });
+        // защита: если q_ls пустой или 0 — вернуть дефолт
+        const qEl = document.getElementById('q_ls');
+        if (qEl && (qEl.value === '' || parseFloat(qEl.value) <= 0)) qEl.value = 12;
+        return true;
+    } catch(e) { return false; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   СЕКУНДОМЕР ПРОКАЧКИ
+   Внешнее кольцо (R=88, dasharray≈553) → трубное (фаза вниз)
+   Внутреннее кольцо (R=72, dasharray≈452) → затрубное (фаза вверх)
+═══════════════════════════════════════════════════════════ */
+const SW = {
+    // Данные из расчёта (обновляются при calc())
+    tDown: 0,      // сек — время трубного
+    tUp:   0,      // сек — время затрубного
+    vDown: 0,      // л
+    vUp:   0,      // л
+
+    // Состояние
+    running: false,
+    elapsed: 0,    // сек от старта
+    startTs: null,
+    rafId:   null,
+
+    // Единое кольцо R=82, C=2π×82≈515.2
+    CIRC: 515,
+
+    // ── Инициализация после calc() ──
+    update(tDown, tUp, vDown, vUp) {
+        this.tDown = tDown;
+        this.tUp   = tUp;
+        this.vDown = vDown;
+        this.vUp   = vUp;
+
+
+
+        // Плановые объёмы в панели
+        const fmtM3 = v => isFinite(v) && v > 0 ? fmt(v/1000, 3) + ' м³' : '— м³';
+        $sw('svp_plan_pipe').textContent  = fmtM3(vDown);
+        $sw('svp_plan_ann').textContent   = fmtM3(vUp);
+        $sw('svp_plan_total').textContent = fmtM3(vDown + vUp);
+
+        if (!this.running) this.render(this.elapsed);
+    },
+
+    // ── Рендер одного кольца с двумя сегментами ──
+    // Логика:
+    //  Кольцо делится на два сегмента пропорционально tDown/tUp.
+    //  pipeDash  = CIRC * (tDown / tTotal)   — длина синего сегмента
+    //  annDash   = CIRC * (tUp   / tTotal)   — длина жёлтого сегмента
+    //  Синий сегмент начинается в 0° (верх).
+    //  Жёлтый начинается сразу после синего.
+    //
+    //  «Исчезание линии закачки»:
+    //  Фоновые полукруги (dim) показывают полный сегмент.
+    //  Яркие дуги (pumped) показывают уже закаченную часть:
+    //    - во время фазы вниз: синяя дуга растёт от 0 до pipeDash
+    //    - во время фазы вверх: синяя = полная, жёлтая дуга растёт
+    render(elapsed) {
+        const tTotal = this.tDown + this.tUp;
+        if (tTotal <= 0) return;
+
+        elapsed = Math.min(elapsed, tTotal);
+
+        const C = this.CIRC;
+        const pipeFrac = tTotal > 0 ? this.tDown / tTotal : 0.5;
+        const annFrac  = 1 - pipeFrac;
+        const pipeDash = C * pipeFrac;   // длина синего сегмента
+        const annDash  = C * annFrac;    // длина жёлтого сегмента
+        // Отступ жёлтого = pipeDash (начало после синего)
+        const annOffset = C - pipeDash;  // strokeDashoffset чтобы жёлтый начался после синего
+
+        // --- Фоновые dim-дуги ---
+        const bgPipe = $sw('sw_ring_bg_pipe');
+        const bgAnn  = $sw('sw_ring_bg_ann');
+        // Синий фон — полный сегмент трубного
+        bgPipe.setAttribute('stroke-dasharray', pipeDash + ' ' + (C - pipeDash));
+        bgPipe.setAttribute('stroke-dashoffset', '0');
+        // Жёлтый фон — полный сегмент затрубного, сдвинутый после синего
+        bgAnn.setAttribute('stroke-dasharray', annDash + ' ' + (C - annDash));
+        bgAnn.setAttribute('stroke-dashoffset', annOffset);
+
+        // --- Яркие дуги (закачанное) ---
+        const pumpedPipe = $sw('sw_ring_pumped_pipe');
+        const pumpedAnn  = $sw('sw_ring_pumped_ann');
+
+        const swTime  = $sw('sw_time');
+        const swPhase = $sw('sw_phase');
+        const swSub   = { textContent: '' };
+        const swPct   = $sw('sw_pct');
+
+        if (elapsed <= this.tDown) {
+            // ── Фаза ТРУБНОЕ ──
+            const fracDown = this.tDown > 0 ? elapsed / this.tDown : 0;
+            const pumpedLen = pipeDash * fracDown;  // закаченная длина дуги
+
+            // Синяя яркая дуга — растёт от 0
+            pumpedPipe.setAttribute('stroke-dasharray', pumpedLen + ' ' + (C - pumpedLen));
+            pumpedPipe.setAttribute('stroke-dashoffset', '0');
+
+            // Жёлтая — пока пустая
+            pumpedAnn.setAttribute('stroke-dasharray', '0 ' + C);
+            pumpedAnn.setAttribute('stroke-dashoffset', annOffset);
+
+            const rem = this.tDown - elapsed;
+            swTime.textContent  = fmtSec(Math.round(rem));
+            swTime.className    = 'sw-time phase-down';
+            swPhase.textContent = 'ТРУБНОЕ ↓';
+            swPhase.style.color = '#00e5ff';
+            swSub.textContent   = 'до бита: ' + fmtSec(Math.round(rem));
+            swPct.textContent   = Math.round(fracDown * 100) + '%';
+
+            // Факт объёмы
+            const factPipe = this.vDown * fracDown;
+            this._updateFact(factPipe, 0);
+
+        } else {
+            // ── Фаза ЗАТРУБНОЕ ──
+            const elapsedUp = elapsed - this.tDown;
+            const fracUp    = this.tUp > 0 ? elapsedUp / this.tUp : 0;
+            const pumpedAnnLen = annDash * fracUp;
+
+            // Синяя — полностью закачана
+            pumpedPipe.setAttribute('stroke-dasharray', pipeDash + ' ' + (C - pipeDash));
+            pumpedPipe.setAttribute('stroke-dashoffset', '0');
+
+            // Жёлтая — растёт
+            pumpedAnn.setAttribute('stroke-dasharray', pumpedAnnLen + ' ' + (C - pumpedAnnLen));
+            pumpedAnn.setAttribute('stroke-dashoffset', annOffset);
+
+            const rem = Math.max(this.tUp - elapsedUp, 0);
+
+            if (rem === 0 && !this.running) {
+                swTime.textContent  = '✓ ГОТОВО';
+                swTime.className    = 'sw-time phase-done';
+                swPhase.textContent = 'ЦИКЛ ЗАВЕРШЁН';
+                swPhase.style.color = '#00ff88';
+                swSub.textContent   = 'общее время: ' + fmtSec(Math.round(tTotal));
+            } else {
+                swTime.textContent  = fmtSec(Math.round(rem));
+                swTime.className    = 'sw-time phase-up';
+                swPhase.textContent = 'ЗАТРУБНОЕ ↑';
+                swPhase.style.color = '#ffd32a';
+                swSub.textContent   = 'до поверхн.: ' + fmtSec(Math.round(rem));
+            }
+            swPct.textContent = Math.round(elapsed / tTotal * 100) + '%';
+
+            // Факт объёмы
+            const factAnn = this.vUp * fracUp;
+            this._updateFact(this.vDown, factAnn);
+        }
+    },
+
+    _updateFact(factPipe, factAnn) {
+        const fmtM3 = v => (v/1000).toFixed(3) + ' м³';
+        const pEl = $sw('svp_fact_pipe');
+        const aEl = $sw('svp_fact_ann');
+        const tEl = $sw('svp_fact_total');
+        if (pEl) pEl.textContent = fmtM3(factPipe);
+        if (aEl) aEl.textContent = fmtM3(factAnn);
+        if (tEl) tEl.textContent = fmtM3(factPipe + factAnn);
+        // Подсветка итога по мере роста
+        if (tEl) {
+            const pct = (this.vDown + this.vUp) > 0
+                ? (factPipe + factAnn) / (this.vDown + this.vUp) : 0;
+            tEl.style.color = pct >= 1 ? '#00ff88' : pct > 0.5 ? '#ffd32a' : '#00e5ff';
+        }
+    },
+
+    // ── Тик RAF ──
+    tick() {
+        if (!this.running) return;
+        this.elapsed = (Date.now() - this.startTs) / 1000;
+        const tTotal = this.tDown + this.tUp;
+        if (this.elapsed >= tTotal) {
+            this.elapsed = tTotal;
+            this.running = false;
+            this.render(this.elapsed);
+            this.uiStopped();
+            return;
+        }
+        this.render(this.elapsed);
+        this.rafId = requestAnimationFrame(() => this.tick());
+    },
+
+    uiRunning() {
+        $sw('sw_btn_start').style.display = 'none';
+        $sw('sw_btn_stop').style.display  = '';
+    },
+    uiStopped() {
+        $sw('sw_btn_start').style.display = '';
+        $sw('sw_btn_stop').style.display  = 'none';
+        if (this.elapsed >= this.tDown + this.tUp && this.tDown + this.tUp > 0) {
+            $sw('sw_btn_start').textContent = '▶ ПОВТОР';
+        }
+    }
+};
+
+function $sw(id) { return document.getElementById(id); }
+
+// Форматирование секунд → мм:сс или ч:мм:сс
+function fmtSec(s) {
+    if (!isFinite(s) || s < 0) return '00:00';
+    const h = Math.floor(s / 3600);
+    const m = Math.floor((s % 3600) / 60);
+    const sec = s % 60;
+    const mm = String(m).padStart(2, '0');
+    const ss = String(sec).padStart(2, '0');
+    return h > 0 ? `${h}:${mm}:${ss}` : `${mm}:${ss}`;
+}
+
+function swStart() {
+    if (SW.tDown + SW.tUp <= 0) {
+
+        return;
+    }
+    if (SW.elapsed >= SW.tDown + SW.tUp) SW.elapsed = 0;
+    SW.running = true;
+    SW.startTs = Date.now() - SW.elapsed * 1000;
+    SW.uiRunning();
+    cancelAnimationFrame(SW.rafId);
+    SW.rafId = requestAnimationFrame(() => SW.tick());
+}
+
+function swStop() {
+    SW.running = false;
+    cancelAnimationFrame(SW.rafId);
+    SW.uiStopped();
+}
+
+function swReset() {
+    swStop();
+    SW.elapsed = 0;
+    // Сброс всех дуг
+    ['sw_ring_pumped_pipe','sw_ring_pumped_ann'].forEach(id => {
+        const el = $sw(id);
+        if (el) { el.setAttribute('stroke-dasharray','0 515'); }
+    });
+    $sw('sw_time').textContent    = '00:00';
+    $sw('sw_time').className      = 'sw-time';
+    $sw('sw_phase').textContent   = 'ОЖИДАНИЕ';
+    $sw('sw_phase').style.color   = '';
+
+    $sw('sw_pct').textContent     = '';
+    $sw('sw_btn_start').textContent = '▶ СТАРТ';
+    // Сброс факт объёмов
+    ['svp_fact_pipe','svp_fact_ann'].forEach(id => {
+        const el = $sw(id); if (el) el.textContent = '0.000 м³';
+    });
+    const tEl = $sw('svp_fact_total');
+    if (tEl) { tEl.textContent = '0.000 м³'; tEl.style.color = '#00e5ff'; }
+    // Перерисовать фоны
+    SW.render(0);
+}
+
+// Патчим calc() чтобы сохранял при каждом расчёте
+const _calcOrig = calc;
+window.calc = function() { saveInputs(); _calcOrig(); };
+
+// При загрузке страницы восстанавливаем данные
+const restored = loadInputs();
+calc();
+
+// Показываем индикатор если данные восстановлены
+if (restored) {
+    const ts = document.getElementById('calc_ts');
+    if (ts) {
+        const orig = ts.textContent;
+        ts.textContent = '✓ ДАННЫЕ ВОССТАНОВЛЕНЫ';
+        ts.style.color = 'var(--safe)';
+        setTimeout(() => { ts.style.color = ''; calc(); }, 2000);
+    }
+}
+
+// ── PWA INSTALL ──
+let _deferredPrompt = null;
+window.addEventListener('beforeinstallprompt', e => {
+    e.preventDefault();
+    _deferredPrompt = e;
+    const bar = document.getElementById('pwa-install-bar');
+    if (bar) bar.style.display = 'flex';
+});
+function pwaDoPrmopt() {
+    if (!_deferredPrompt) return;
+    _deferredPrompt.prompt();
+    _deferredPrompt.userChoice.then(() => { _deferredPrompt = null; pwaDismiss(); });
+}
+function pwaDismiss() {
+    const bar = document.getElementById('pwa-install-bar');
+    if (bar) bar.style.display = 'none';
+}
+
+// ── SERVICE WORKER — кэширование для офлайн работы ──
+if ('serviceWorker' in navigator) {
+    const swCode = `
+const CACHE = 'wcp-v1';
+self.addEventListener('install', e => {
+    e.waitUntil(
+        caches.open(CACHE).then(c => c.add(self.location.pathname))
+    );
+    self.skipWaiting();
+});
+self.addEventListener('activate', e => {
+    e.waitUntil(
+        caches.keys().then(keys =>
+            Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
+        )
+    );
+    self.clients.claim();
+});
+self.addEventListener('fetch', e => {
+    e.respondWith(
+        caches.match(e.request).then(r => r || fetch(e.request).then(res => {
+            if (res && res.status === 200 && e.request.method === 'GET') {
+                const clone = res.clone();
+                caches.open(CACHE).then(c => c.put(e.request, clone));
+            }
+            return res;
+        }).catch(() => caches.match(e.request)))
+    );
+});`;
+    const swBlob = new Blob([swCode], {type: 'application/javascript'});
+    const swUrl  = URL.createObjectURL(swBlob);
+    navigator.serviceWorker.register(swUrl)
+        .then(() => console.log('[WCP] Service Worker зарегистрирован'))
+        .catch(e  => console.warn('[WCP] SW ошибка:', e));
+}
+
+</script>
+
+<!-- ═══ PWA INSTALL BAR ═══ -->
+<div id="pwa-install-bar">
+    <div class="pwa-msg">
+        <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="19" stroke="#1e2d3d" stroke-width="1.5"/>
+            <circle cx="20" cy="20" r="19" stroke="#00b4d8" stroke-width="1.5" stroke-dasharray="55 65" stroke-dashoffset="-8"/>
+            <rect x="18.5" y="3" width="3" height="34" fill="#00b4d8" opacity=".85"/>
+            <circle cx="20" cy="20" r="5" fill="none" stroke="#00b4d8" stroke-width="1.5"/>
+            <circle cx="20" cy="20" r="2" fill="#00b4d8"/>
+        </svg>
+        <div>
+            <div style="font-size:.9rem;font-weight:700;color:var(--text-bright)">УСТАНОВИТЬ ПРИЛОЖЕНИЕ</div>
+            <div style="font-size:.62rem;color:var(--text-dim);margin-top:1px">Well Control Pro — работает без интернета</div>
+        </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px">
+        <button id="pwa-install-btn" onclick="pwaDoPrmopt()">⬇ УСТАНОВИТЬ</button>
+        <button id="pwa-install-dismiss" onclick="pwaDismiss()" title="Закрыть">✕</button>
+    </div>
+</div>
+</body>
+</html>
